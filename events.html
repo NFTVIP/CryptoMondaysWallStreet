@@ -177,8 +177,8 @@
     </div>
   </section>
 
-  <!-- ─── Archives — rendered from events.json ─── -->
-  <section id="past-section" class="px-8 max-w-screen-2xl mx-auto" style="display:none;">
+  <!-- ─── Archives — always visible, 2 preview cards by default ─── -->
+  <section id="past-section" class="px-8 max-w-screen-2xl mx-auto">
     <h2 class="text-3xl font-black text-white uppercase tracking-tighter mb-12 border-l-4 border-primary pl-6">The Archives</h2>
     <div id="past-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12"></div>
     <!-- Empty state -->
@@ -186,7 +186,15 @@
       <span class="material-symbols-outlined text-4xl mb-4 block">event_busy</span>
       <p class="font-bold uppercase tracking-widest text-sm">No past events found for this location</p>
     </div>
-    <div class="mt-12 text-center">
+    <!-- Show all button -->
+    <div id="show-all-past-wrap" class="mt-12 text-center" style="display:none;">
+      <button id="show-all-past-btn"
+        class="bg-surface-container-high hover:bg-surface-container-highest text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-lg transition-all flex items-center gap-2 mx-auto">
+        <span id="show-all-past-label">View All Past Events</span>
+        <span class="material-symbols-outlined text-sm">expand_more</span>
+      </button>
+    </div>
+    <div class="mt-8 text-center">
       <a href="https://lu.ma/user/WallStreet" target="_blank" rel="noopener"
         class="text-on-surface-variant hover:text-white font-bold uppercase tracking-widest text-xs transition-colors flex items-center justify-center gap-2 mx-auto">
         View Complete Archive on Lu.ma <span class="material-symbols-outlined text-sm">open_in_new</span>
@@ -244,22 +252,26 @@
   'use strict';
 
   // ── State ─────────────────────────────────────────────────
-  let period   = 'upcoming';
-  let location = 'all';
-  let eventsData = { upcoming: [], past: [] };
+  const PAST_PREVIEW = 2;          // cards visible before "Show All" is clicked
+  let location      = 'all';
+  let pastExpanded  = false;
+  let eventsData    = { upcoming: [], past: [] };
 
   // ── DOM refs ──────────────────────────────────────────────
-  const upcomingSection = document.getElementById('upcoming-section');
-  const pastSection     = document.getElementById('past-section');
-  const upcomingGrid    = document.getElementById('upcoming-grid');
-  const pastGrid        = document.getElementById('past-grid');
-  const upcomingEmpty   = document.getElementById('upcoming-empty');
-  const pastEmpty       = document.getElementById('past-empty');
-  const eventsLoading   = document.getElementById('events-loading');
-  const tabUpcoming     = document.getElementById('tab-upcoming');
-  const tabPast         = document.getElementById('tab-past');
-  const chipAll         = document.getElementById('chip-all-dates');
-  const chipNY          = document.getElementById('chip-new-york');
+  const upcomingSection  = document.getElementById('upcoming-section');
+  const pastSection      = document.getElementById('past-section');
+  const upcomingGrid     = document.getElementById('upcoming-grid');
+  const pastGrid         = document.getElementById('past-grid');
+  const upcomingEmpty    = document.getElementById('upcoming-empty');
+  const pastEmpty        = document.getElementById('past-empty');
+  const eventsLoading    = document.getElementById('events-loading');
+  const tabUpcoming      = document.getElementById('tab-upcoming');
+  const tabPast          = document.getElementById('tab-past');
+  const chipAll          = document.getElementById('chip-all-dates');
+  const chipNY           = document.getElementById('chip-new-york');
+  const showAllWrap      = document.getElementById('show-all-past-wrap');
+  const showAllBtn       = document.getElementById('show-all-past-btn');
+  const showAllLabel     = document.getElementById('show-all-past-label');
 
   // ── Location slug ─────────────────────────────────────────
   function locationSlug(loc) {
@@ -276,7 +288,7 @@
   function buildFeaturedCard(ev) {
     const slug = locationSlug(ev.location);
     const img = ev.image ? `<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="${ev.image}" alt="${ev.title}"/>` : '';
-    return `<div data-event-card data-period="upcoming" data-location="${slug}"
+    return `<div data-event-card data-location="${slug}"
          class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low aspect-[16/9] md:aspect-auto md:h-[600px]">
       ${img}
       <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
@@ -317,7 +329,7 @@
     const img = ev.image
       ? `<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" src="${ev.image}" alt="${ev.title}"/>`
       : `<div class="w-full h-full flex items-center justify-center"><span class="material-symbols-outlined text-4xl text-on-surface-variant/20">event</span></div>`;
-    return `<div data-event-card data-period="past" data-location="${slug}" class="group cursor-pointer">
+    return `<div data-event-card data-location="${slug}" class="group cursor-pointer">
       <a href="${ev.url}" target="_blank" rel="noopener">
         <div class="aspect-video mb-6 overflow-hidden rounded-lg bg-surface-container-high">${img}</div>
         <span class="text-[10px] text-on-surface-variant font-mono uppercase">${ev.date_label} · ${ev.location.toUpperCase()}</span>
@@ -326,19 +338,21 @@
     </div>`;
   }
 
-  // ── Render ────────────────────────────────────────────────
+  // ── Render upcoming ───────────────────────────────────────
   function renderUpcoming() {
     if (!upcomingGrid) return;
     upcomingGrid.innerHTML = '';
     const events = eventsData.upcoming;
-    if (!events.length) return;
+    if (!events.length) {
+      if (upcomingEmpty) upcomingEmpty.classList.remove('hidden');
+      return;
+    }
     const featured = events.find(e => e.featured) || events[0];
     const others   = events.filter(e => e !== featured);
     upcomingGrid.insertAdjacentHTML('beforeend', buildFeaturedCard(featured));
     if (others.length) {
       const wrap = document.createElement('div');
       wrap.setAttribute('data-event-card','');
-      wrap.setAttribute('data-period','upcoming');
       wrap.setAttribute('data-location', locationSlug(others[0].location));
       wrap.className = 'md:col-span-4 flex flex-col gap-6';
       others.slice(0,2).forEach(ev => wrap.insertAdjacentHTML('beforeend', buildSideCard(ev)));
@@ -346,46 +360,80 @@
     }
   }
 
+  // ── Render past (always visible, preview 2 by default) ────
   function renderPast() {
     if (!pastGrid) return;
     pastGrid.innerHTML = '';
+    if (!eventsData.past.length) {
+      if (pastEmpty) pastEmpty.classList.remove('hidden');
+      return;
+    }
     eventsData.past.forEach(ev => pastGrid.insertAdjacentHTML('beforeend', buildPastCard(ev)));
+    applyPastVisibility();
   }
 
-  // ── Filter ────────────────────────────────────────────────
-  function applyFilters() {
-    if (upcomingSection) upcomingSection.style.display = period === 'upcoming' ? '' : 'none';
-    if (pastSection)     pastSection.style.display     = period === 'past'     ? '' : 'none';
+  // Show first PAST_PREVIEW cards; hide the rest unless expanded
+  function applyPastVisibility() {
+    if (!pastGrid) return;
+    const cards = Array.from(pastGrid.querySelectorAll('[data-event-card]'));
+    let shown = 0;
+    cards.forEach(card => {
+      const locMatch = location === 'all' || card.dataset.location === location;
+      if (!locMatch) { card.style.display = 'none'; return; }
+      if (pastExpanded || shown < PAST_PREVIEW) {
+        card.style.display = '';
+        shown++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    // Show/hide "Show All" button
+    const total = cards.filter(c => location === 'all' || c.dataset.location === location).length;
+    const hasMore = !pastExpanded && total > PAST_PREVIEW;
+    if (showAllWrap) showAllWrap.style.display = hasMore ? '' : 'none';
+    if (showAllLabel) showAllLabel.textContent = `View All ${total} Past Events`;
+    if (pastEmpty) pastEmpty.classList.toggle('hidden', shown > 0);
+  }
 
+  function expandPast() {
+    pastExpanded = true;
+    applyPastVisibility();
+  }
+
+  // ── Tab styling ───────────────────────────────────────────
+  function updateTabStyles(active) {
     [tabUpcoming, tabPast].forEach(btn => {
       if (!btn) return;
       btn.classList.remove('text-white','border-b-2','border-secondary','text-on-surface-variant');
     });
-    if (tabUpcoming) { tabUpcoming.classList.add(period==='upcoming'?'text-white':'text-on-surface-variant'); if(period==='upcoming') tabUpcoming.classList.add('border-b-2','border-secondary'); }
-    if (tabPast)     { tabPast.classList.add(period==='past'?'text-white':'text-on-surface-variant');         if(period==='past')     tabPast.classList.add('border-b-2','border-secondary'); }
+    const activeTab  = active === 'past' ? tabPast     : tabUpcoming;
+    const inactiveTab = active === 'past' ? tabUpcoming : tabPast;
+    if (activeTab)   { activeTab.classList.add('text-white','border-b-2','border-secondary'); }
+    if (inactiveTab) { inactiveTab.classList.add('text-on-surface-variant'); }
+  }
 
-    [chipAll, chipNY].forEach((c,i) => {
-      const active = i===0 ? location==='all' : location==='new-york';
+  // ── Location filter chips ─────────────────────────────────
+  function applyLocationFilter() {
+    [chipAll, chipNY].forEach((c, i) => {
+      const active = i === 0 ? location === 'all' : location === 'new-york';
       if (!c) return;
       c.classList.toggle('bg-primary-container',      active);
       c.classList.toggle('text-on-primary-container', active);
       c.classList.toggle('bg-surface-container-high', !active);
       c.classList.toggle('text-on-surface-variant',   !active);
     });
-
-    const grid  = period==='upcoming' ? upcomingGrid : pastGrid;
-    const empty = period==='upcoming' ? upcomingEmpty : pastEmpty;
-    if (grid) {
-      const cards = grid.querySelectorAll('[data-event-card]');
-      let visible = 0;
-      cards.forEach(card => {
-        const match = location==='all' || card.dataset.location===location;
+    // Filter upcoming cards
+    if (upcomingGrid) {
+      let vis = 0;
+      upcomingGrid.querySelectorAll('[data-event-card]').forEach(card => {
+        const match = location === 'all' || card.dataset.location === location;
         card.style.display = match ? '' : 'none';
-        if (match) visible++;
+        if (match) vis++;
       });
-      if (empty) empty.classList.toggle('hidden', visible > 0);
-      grid.style.display = (visible > 0) ? '' : 'none';
+      if (upcomingEmpty) upcomingEmpty.classList.toggle('hidden', vis > 0);
     }
+    // Re-apply past visibility with new location
+    applyPastVisibility();
   }
 
   // ── Load events.json ──────────────────────────────────────
@@ -402,14 +450,34 @@
     if (upcomingGrid)  upcomingGrid.style.display  = '';
     renderUpcoming();
     renderPast();
-    applyFilters();
+    updateTabStyles('upcoming');
   }
 
   // ── Listeners ─────────────────────────────────────────────
-  tabUpcoming?.addEventListener('click', () => { period='upcoming'; applyFilters(); });
-  tabPast?.addEventListener(    'click', () => { period='past';     applyFilters(); });
-  chipAll?.addEventListener(    'click', () => { location='all';    applyFilters(); });
-  chipNY?.addEventListener(     'click', () => { location = location==='new-york' ? 'all' : 'new-york'; applyFilters(); });
+  tabUpcoming?.addEventListener('click', () => {
+    updateTabStyles('upcoming');
+    upcomingSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  tabPast?.addEventListener('click', () => {
+    updateTabStyles('past');
+    expandPast();
+    pastSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  chipAll?.addEventListener('click', () => {
+    location = 'all';
+    applyLocationFilter();
+  });
+
+  chipNY?.addEventListener('click', () => {
+    location = location === 'new-york' ? 'all' : 'new-york';
+    applyLocationFilter();
+  });
+
+  showAllBtn?.addEventListener('click', () => {
+    expandPast();
+  });
 
   loadEvents();
 })();
