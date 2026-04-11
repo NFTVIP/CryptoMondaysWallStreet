@@ -1,0 +1,256 @@
+<!-- Portfolio - Updated Strategy -->
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | CryptoMondays Institutional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#92d0c1",
+                    "surface-variant": "#343538",
+                    "on-primary-fixed-variant": "#004d64",
+                    "surface-container-lowest": "#0d0e11",
+                    "tertiary": "#aeecdd",
+                    "on-secondary-fixed": "#00210f",
+                    "inverse-surface": "#e3e2e6",
+                    "background": "#121316",
+                    "on-surface": "#e3e2e6",
+                    "error-container": "#93000a",
+                    "primary-fixed": "#bee9ff",
+                    "on-background": "#e3e2e6",
+                    "on-tertiary-fixed-variant": "#095045",
+                    "surface": "#121316",
+                    "on-tertiary-fixed": "#00201b",
+                    "surface-container-high": "#292a2d",
+                    "on-secondary-container": "#005f35",
+                    "on-surface-variant": "#bdc8cf",
+                    "inverse-primary": "#006684",
+                    "secondary": "#59ffa3",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#68d3ff",
+                    "outline-variant": "#3e484e",
+                    "on-primary": "#003546",
+                    "tertiary-fixed-dim": "#95d3c4",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#5fd1ff",
+                    "surface-bright": "#38393c",
+                    "surface-container-highest": "#343538",
+                    "on-secondary": "#00391d",
+                    "on-primary-fixed": "#001f2a",
+                    "secondary-container": "#00e386",
+                    "surface-tint": "#68d3ff",
+                    "on-tertiary": "#00382f",
+                    "on-tertiary-container": "#1a5a4f",
+                    "surface-container": "#1f1f23",
+                    "primary": "#b8e7ff",
+                    "secondary-fixed": "#59ffa3",
+                    "on-secondary-fixed-variant": "#00522d",
+                    "inverse-on-surface": "#303034",
+                    "on-primary-container": "#005872",
+                    "surface-container-low": "#1b1b1f",
+                    "secondary-fixed-dim": "#00e386",
+                    "tertiary-fixed": "#b0efdf",
+                    "surface-dim": "#121316",
+                    "outline": "#879299"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 31, 35, 0.8);
+            backdrop-filter: blur(24px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#121316]/80 backdrop-blur-xl shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)] bg-gradient-to-b from-[#121316] to-transparent">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<a href="index.html" class="flex items-center gap-2 group no-underline">
+  <span class="text-lg font-black tracking-tighter text-white uppercase font-headline group-hover:text-primary-container transition-colors">CryptoMondays</span>
+  <img src="images/WallStreet-Sign.png" alt="Wall Street" class="h-14 w-auto rounded opacity-80 group-hover:opacity-100 transition-opacity"/>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-inter tracking-tight font-medium uppercase text-sm text-slate-400 hover:text-white transition-colors" href="index.html">Home</a>
+<a class="font-inter tracking-tight font-medium uppercase text-sm text-slate-400 hover:text-white transition-colors" href="events.html">Events</a>
+<a class="font-inter tracking-tight font-medium uppercase text-sm text-slate-400 hover:text-white transition-colors" href="partners.html">Partners &amp; Media</a>
+<a class="font-inter tracking-tight font-medium uppercase text-sm text-[#5FD1FF] border-b-2 border-[#5FD1FF] pb-1" href="portfolio.html">Portfolio</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="events.html#speak" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-inter tracking-tight font-medium uppercase text-sm hover:bg-[#1e1f24] transition-all duration-300 scale-95 active:opacity-80">
+                    Apply to Speak
+                </a>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-12">
+<span class="text-primary-container font-medium tracking-widest uppercase text-xs mb-4 block">Institutional Assets</span>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-tight mb-8">
+                        The Digital <br/><span class="text-outline">Portfolio Ledger.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Strategically navigating the frontier of blockchain technology through precision-based capital allocation and deep-market connectivity.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Brand Grid (Institutional Network) -->
+<section class="mb-24">
+<div class="flex items-baseline justify-between mb-12">
+<h2 class="text-3xl font-bold text-white tracking-tight font-headline">Institutional Network</h2>
+<div class="h-[1px] flex-grow mx-8 bg-outline-variant/20 hidden md:block"></div>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-widest">Global Partners</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-px bg-outline-variant/10 rounded-xl overflow-hidden">
+<div class="bg-surface p-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+<img class="h-8 object-contain" data-alt="Minimalist corporate logo for a blockchain technology firm in white and gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVpDFc6Y0g9ccQtpercv5WdpNtnxcHar8p95ptw6ZYJmCfNQp-UdJnBT4P2HHHR3WaYwjElAYo07FrELR4A0kydXUVmTsHHgD_6faILw2FXPk2gL7rGtzN2I0GojPmTD_KsI_hR1r8FGofzQjRyPOBQ6ZyuarA2H4y3dNas5pZJGRfP9-oXoc3fvBVGYvdY3pPIthcH2uUgqzb2A2E6_PjWfTQgbtxLPcmZE5etGy5JPQXu-46derWmHDiZTMinshoZr4inKtpZJ0"/>
+</div>
+<div class="bg-surface p-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+<img class="h-8 object-contain" data-alt="Sleek abstract emblem for a digital asset fund in monochrome silver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRmqeFOSw9QquMLUtXMYiV8rMihFevq4ss3EufMuyJGDkdTtoS7UXTdsUmQbrAeM4edyGf9rkCr11mimspXA0ZirHmqEYKfqJL7Bw0a2Jh74UT5YUHB8J8V3jH_HvUBguWmf7vmL6G9Q1nPJIiX6yd0cpMNj2gzgSxkRiUaYovrnjbGE7mk6zUwPS09mgKhofcx46SYYOnUlfxrD-A9KrOh84ubH9Z2k-IzL7Sg0iMeioT2LhMSobfdS4teCOPwryOzKqVlBaCRXM"/>
+</div>
+<div class="bg-surface p-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+<img class="h-8 object-contain" data-alt="Bold geometric wordmark for a crypto exchange platform in flat white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxoZdIl9b5ZOVdevaMKyktwmF1qeazaXW4pMydIApPsvGGuxszmbC9R5h9EMCotC54Cs4mm9ELTjJCgejIZrWvWFtb9VkuJ2v0SKa_JYY6ZTp1lUlgoxcZPJZZg5cPAEdxKwT7d2i9pmR71F8z0qj1yBZH7uJOiGv3krdvnSDIg6Pz260TkNqMgNaT0FCMEDdlE6ofOOv9ib-8V_f-oyCXTC71G2jv1_84Hs4CF_BlDpn2NY0rSXDtGgbYbwd_KkQtI0LkP4TMHck"/>
+</div>
+<div class="bg-surface p-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+<img class="h-8 object-contain" data-alt="Modern sans-serif logo for a venture capital firm specializing in web3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCUaFDWxgMZtczpDuw4Fl-FReq8w63KAdhfwLpARx6yMgnFt_7U9DFAztNmgFfDesGWo-3SqiCELEs8tXMZpFbgLN237dXaqcHLkTsInoqK1vPJLq97hQfH10iYdb1yphkwiz077JVRIFKHczUcI7bguqDczSrNC9bih5pAfNyJK4QOOZmPa6E5AiZdTASvQ_c3tnCZC_KqnVWX6D4V6wLuaTM-VRq8zM92GJaCHewz37rekKVAoWRrVyUA5dZENa1Vr0IDKdWpJc"/>
+</div>
+<div class="bg-surface p-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+<img class="h-8 object-contain" data-alt="Clean minimal logo for an institutional custody service provider" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtahcAiLRB-koZSDSktlVxfU4N3RRcwnKEhxxmXnDyUAW-TVM4HNzJU5ZNWJL7BYwfqsuvvvvNO7i06B7M9LjyJ8kCduJUUL2Q1udCizLEpNJanFuZ3f9PhWbiSagjnGzcLXzQMIx680035wRrzqk2vIpJKQ8Mxx8KkR2ym874RpLp33RLfLW-R7z112Z6ORojRtOEMIRwPxEypJYX6JaPzLA-FQjI3QQHo9Np94aWEtWUo0sycodd1cVPcpw96Ur1IGadRKUKqA"/>
+</div>
+<div class="bg-surface p-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+<img class="h-8 object-contain" data-alt="Professional tech-focused emblem for a data analytics company" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKkUf6GkZRMjzPcadI20gKJwtbpjebYpdlJ6qP2IbDbTqVaIOjc4l_D09Ah6F-uO9ZYSAMOEPGN02EOHPsvWCIRog6K1apeWKHdvjuq22NuaWVGdrGaT_fyP2cgop3-eJtJ9iaKWwg8Y5eZQB3_kK8kVwaW4ahHBXieezqma4C5XmpQvqfgpwgfJtUG4wpAZs-nNb5nQxbSrfWXjP3ywdHy4-_giIYMtBsCWt2t-1K6iqvE7-hWseFOcar9POFrSsy0wK1agdjxKc"/>
+</div>
+</div>
+</section>
+<!-- Specialized Web3 Services -->
+<section class="mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4">
+<h2 class="text-4xl font-bold text-white mb-6 leading-tight">Specialized Web3 Services</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                        We provide the technical and regulatory scaffolding required for large-scale institutional entry into the decentralized economy.
+                    </p>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Compliance -->
+<div class="bg-surface-container border-l-4 border-[#5FD1FF] p-8 rounded-r-xl group hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[#5FD1FF] text-3xl mb-6 block" data-icon="policy">policy</span>
+<h3 class="text-xl font-bold text-white mb-3">Compliance</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Frameworks for multi-jurisdictional regulatory alignment and institutional risk mitigation.</p>
+</div>
+<!-- Analytics -->
+<div class="bg-surface-container border-l-4 border-[#42FF9E] p-8 rounded-r-xl group hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[#42FF9E] text-3xl mb-6 block" data-icon="query_stats">query_stats</span>
+<h3 class="text-xl font-bold text-white mb-3">Analytics</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">High-fidelity on-chain data synthesis and predictive modeling for portfolio optimization.</p>
+</div>
+<!-- DAO Ops -->
+<div class="bg-surface-container border-l-4 border-[#5FD1FF] p-8 rounded-r-xl group hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[#5FD1FF] text-3xl mb-6 block" data-icon="account_tree">account_tree</span>
+<h3 class="text-xl font-bold text-white mb-3">DAO Ops</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Governance architecture and treasury management systems for decentralized organizations.</p>
+</div>
+<!-- Media -->
+<div class="bg-surface-container border-l-4 border-[#42FF9E] p-8 rounded-r-xl group hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[#42FF9E] text-3xl mb-6 block" data-icon="podcasts">podcasts</span>
+<h3 class="text-xl font-bold text-white mb-3">Media</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Institutional narrative crafting and strategic distribution across global crypto networks.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTAs & Subscription -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Email Capture -->
+<div class="bg-surface-container-low p-12 rounded-xl">
+<h3 class="text-3xl font-bold text-white mb-4">Join the Room</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed max-w-sm">Receive monthly portfolio insights and exclusive institutional opportunities delivered directly to your terminal.</p>
+<div class="flex flex-col sm:flex-row gap-3">
+<input class="flex-grow bg-surface-container-highest border-none rounded-lg px-4 py-3 text-white focus:ring-1 focus:ring-primary-container text-sm" placeholder="Institutional Email" type="email"/>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-tight hover:opacity-90 transition-opacity">Register</button>
+</div>
+</div>
+<!-- Join CTA -->
+<div class="bg-gradient-to-br from-primary-container to-[#004d64] p-12 rounded-xl flex flex-col justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="groups">groups</span>
+</div>
+<h3 class="text-3xl font-black text-on-primary-container mb-4 uppercase tracking-tighter">Join the Institutional Network</h3>
+<p class="text-on-primary-container/80 mb-8 max-w-sm font-medium">Access private deal flow and connect with the architects of the new financial system.</p>
+<div>
+<button class="bg-on-primary-container text-primary-container px-10 py-4 rounded-lg font-black text-sm uppercase tracking-widest hover:bg-background hover:text-white transition-all shadow-xl">Connect Now</button>
+</div>
+</div>
+</section>
+</main>
+<!-- ─── Footer ─── -->
+<footer class="bg-[#121316] w-full border-t border-white/5 mt-24">
+  <div class="grid grid-cols-1 gap-12 px-8 py-16 max-w-screen-2xl mx-auto font-['Inter'] text-sm md:grid-cols-3">
+    <div>
+      <a href="index.html" class="flex items-center gap-2 mb-6 group no-underline w-fit">
+        <span class="text-xl font-black text-white uppercase tracking-tighter group-hover:text-primary-container transition-colors">CRYPTOMONDAYS</span>
+        <img src="images/WallStreet-Sign.png" alt="Wall Street" class="h-16 w-auto rounded opacity-80 group-hover:opacity-100 transition-opacity"/>
+      </a>
+      <p class="text-slate-500 leading-relaxed mb-6">The premier executive forum for the convergence of traditional capital markets and distributed ledger technology.</p>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary-container cursor-pointer transition-colors">public</span>
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary-container cursor-pointer transition-colors">hub</span>
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary-container cursor-pointer transition-colors">mail</span>
+      </div>
+    </div>
+    <div>
+      <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Ecosystem</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="index.html">Home</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="events.html">Events</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="partners.html">Partners &amp; Media</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Legal &amp; Governance</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="#">Privacy Policy</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="#">Terms of Service</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="#">Compliance</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="speaker-guidelines.html">Speaker Guidelines</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/5 py-8 px-8 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-slate-500 text-[10px] uppercase tracking-widest">© 2026 CryptoMondays Wall Street. Institutional Precision.</p>
+    <div class="flex gap-6 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+      <span>FX Data: ECB via Frankfurter.app</span>
+      <span>Uptime: 99.99%</span>
+    </div>
+  </div>
+</footer>
+</body></html>

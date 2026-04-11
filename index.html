@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CryptoMondays | Institutional Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Globe.gl — open-source 3D globe (MIT) -->
+<script src="https://cdn.jsdelivr.net/npm/globe.gl/dist/globe.gl.min.js"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode:"class",
+    theme:{
+      extend:{
+        colors:{
+          "tertiary-container":"#92d0c1","surface-variant":"#343538","on-primary-fixed-variant":"#004d64",
+          "surface-container-lowest":"#0d0e11","tertiary":"#aeecdd","on-secondary-fixed":"#00210f",
+          "inverse-surface":"#e3e2e6","background":"#121316","on-surface":"#e3e2e6","on-background":"#e3e2e6",
+          "on-tertiary-fixed-variant":"#095045","surface":"#121316","on-tertiary-fixed":"#00201b",
+          "surface-container-high":"#292a2d","on-secondary-container":"#005f35","on-surface-variant":"#bdc8cf",
+          "inverse-primary":"#006684","secondary":"#59ffa3","error":"#ffb4ab","primary-fixed":"#bee9ff",
+          "primary-fixed-dim":"#68d3ff","outline-variant":"#3e484e","on-primary":"#003546",
+          "tertiary-fixed-dim":"#95d3c4","on-error":"#690005","on-error-container":"#ffdad6",
+          "primary-container":"#5fd1ff","surface-bright":"#38393c","surface-container-highest":"#343538",
+          "on-secondary":"#00391d","on-primary-fixed":"#001f2a","secondary-container":"#00e386",
+          "surface-tint":"#68d3ff","on-tertiary":"#00382f","on-tertiary-container":"#1a5a4f",
+          "surface-container":"#1f1f23","primary":"#b8e7ff","secondary-fixed":"#59ffa3",
+          "on-secondary-fixed-variant":"#00522d","inverse-on-surface":"#303034","on-primary-container":"#005872",
+          "surface-container-low":"#1b1b1f","secondary-fixed-dim":"#00e386","tertiary-fixed":"#b0efdf",
+          "surface-dim":"#121316","outline":"#879299"
+        },
+        borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+        fontFamily:{"headline":["Inter"],"body":["Inter"],"label":["Inter"]}
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
+  body{background-color:#121316;color:#e3e2e6;font-family:'Inter',sans-serif;}
+  .asymmetric-grid{display:grid;grid-template-columns:1.5fr 1fr;}
+  @media(max-width:1024px){.asymmetric-grid{grid-template-columns:1fr;}}
+  #globe-container{width:100%;height:100%;cursor:grab;}
+  #globe-container:active{cursor:grabbing;}
+  #globe-container canvas{display:block;width:100%!important;height:100%!important;}
+</style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- ─── TopNavBar ─── -->
+<nav class="fixed top-0 w-full z-50 bg-[#121316]/80 backdrop-blur-xl shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
+  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+    <a href="index.html" class="flex items-center gap-2 group no-underline">
+      <span class="text-lg font-black tracking-tighter text-white uppercase group-hover:text-primary-container transition-colors">CryptoMondays</span>
+      <img src="images/WallStreet-Sign.png" alt="Wall Street" class="h-14 w-auto rounded opacity-80 group-hover:opacity-100 transition-opacity"/>
+    </a>
+    <div class="hidden md:flex gap-8 items-center font-inter tracking-tight font-medium uppercase text-sm">
+      <a class="text-[#5FD1FF] border-b-2 border-[#5FD1FF] pb-1" href="index.html">Home</a>
+      <a class="text-slate-400 hover:text-white transition-colors" href="events.html">Events</a>
+      <a class="text-slate-400 hover:text-white transition-colors" href="partners.html">Partners &amp; Media</a>
+      <a class="text-slate-400 hover:text-white transition-colors" href="portfolio.html">Portfolio</a>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="events.html#speak" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-inter tracking-tight font-medium uppercase text-sm hover:opacity-90 transition-all duration-300 scale-95 active:opacity-80">
+        Apply to Speak
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-24">
+
+  <!-- ─── Hero ─── -->
+  <section class="relative min-h-[80vh] flex items-center px-8 md:px-24 overflow-hidden">
+    <div class="max-w-screen-2xl mx-auto w-full asymmetric-grid gap-16 items-center">
+      <div class="z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low mb-8">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span>
+          <span class="text-xs font-medium uppercase tracking-widest text-on-surface-variant">Global Institutional Hub</span>
+        </div>
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]">
+          THE DIGITAL <br/><span class="text-primary-container">LEDGER</span> OF <br/>WALL STREET
+        </h1>
+        <p class="text-xl text-on-surface-variant max-w-xl mb-12 leading-relaxed">
+          Where institutional stability meets digital frontier. Join the world's most elite network for crypto-asset expansion and institutional-grade insights.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex flex-col gap-2">
+            <label class="text-[10px] uppercase tracking-widest text-on-surface-variant ml-1">Secure an invite</label>
+            <div class="flex p-1 rounded-lg bg-surface-container-highest max-w-md">
+              <input class="bg-transparent border-none focus:ring-0 text-sm px-4 w-64 text-white" placeholder="Institutional Email" type="email"/>
+              <button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-md text-xs font-bold uppercase tracking-tight">
+                Join the Room
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative flex justify-center items-center">
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent blur-3xl rounded-full"></div>
+        <img alt="CryptoMondays 3D Logo" class="w-full max-w-lg h-auto object-contain z-10 drop-shadow-[0_0_50px_rgba(95,209,255,0.3)]"
+          src="https://lh3.googleusercontent.com/aida/ADBb0ui1DiECciR-zC0geXVDA4QIx-504Qa9HZ1iP4YVmXNxGKq2GZAseGU5CwWhXhvzIN7fcSpgMpahLHL2e4ZL7_NSYm6MSP1iiPp649Yydd1d_RmuJb4jo6ojS8iFQmVIBhiQ8l3AH2TjlTwgpo56o_PVF_u__ZM34Zrc1MDdVkNFtVBaYFNUFx9Q2Lcn1FrPcm4gm8Kv8lXgTrR1S699gTuHwwo7WBpfeu6CudDi_Gk2jp-qjRpQgj9uosLAw8ncqsc8ofGE_zjmdA"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Global Intelligence Network ─── -->
+  <section class="py-32 px-8 md:px-24 bg-surface-container-low relative">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+
+        <!-- City Cards -->
+        <div class="w-full lg:w-5/12 space-y-8 z-20 flex-shrink-0">
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-tight">
+            Global Intelligence <span class="text-secondary">Network</span>
+          </h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed">
+            Our presence spans the world's most critical financial hubs. Live currency benchmarks across our primary strategic corridors — updated daily via open market data.
+          </p>
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 pt-4">
+
+            <!-- NYC -->
+            <div class="bg-surface p-4 rounded-xl border-l-2 border-primary-container hover:bg-surface-container-highest transition-all duration-300">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-sm font-bold">NYC / Wall St</h3>
+                <span class="text-primary-container material-symbols-outlined text-sm">domain</span>
+              </div>
+              <div class="flex justify-between items-end">
+                <span class="text-[10px] text-on-surface-variant">USD</span>
+                <span class="font-bold text-xs text-primary-container">Base</span>
+              </div>
+              <div class="mt-2 text-[10px] font-mono text-secondary tracking-wide" id="time-nyc">--:-- --</div>
+            </div>
+
+            <!-- Miami -->
+            <div class="bg-surface p-4 rounded-xl border-l-2 border-secondary hover:bg-surface-container-highest transition-all duration-300">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-sm font-bold">Miami</h3>
+                <span class="text-primary-container material-symbols-outlined text-sm">scan</span>
+              </div>
+              <div class="flex justify-between items-end">
+                <span class="text-[10px] text-on-surface-variant">USD</span>
+                <span class="font-bold text-xs text-primary-container">1.0000</span>
+              </div>
+              <div class="mt-2 text-[10px] font-mono text-secondary tracking-wide" id="time-miami">--:-- --</div>
+            </div>
+
+            <!-- Austin -->
+            <div class="bg-surface p-4 rounded-xl border-l-2 border-primary-container hover:bg-surface-container-highest transition-all duration-300">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-sm font-bold">Austin</h3>
+                <span class="text-primary-container material-symbols-outlined text-sm">hub</span>
+              </div>
+              <div class="flex justify-between items-end">
+                <span class="text-[10px] text-on-surface-variant">USD</span>
+                <span class="font-bold text-xs text-primary-container">1.0000</span>
+              </div>
+              <div class="mt-2 text-[10px] font-mono text-secondary tracking-wide" id="time-austin">--:-- --</div>
+            </div>
+
+            <!-- London -->
+            <div class="bg-surface p-4 rounded-xl border-l-2 border-primary-container hover:bg-surface-container-highest transition-all duration-300">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-sm font-bold">London</h3>
+                <span class="text-primary-container material-symbols-outlined text-sm">account_balance</span>
+              </div>
+              <div class="flex justify-between items-end">
+                <span class="text-[10px] text-on-surface-variant" id="london-label">GBP</span>
+                <span class="font-bold text-xs text-primary-container" id="london-rate">—</span>
+              </div>
+              <div class="mt-2 text-[10px] font-mono text-secondary tracking-wide" id="time-london">--:-- --</div>
+            </div>
+
+            <!-- Paris -->
+            <div class="bg-surface p-4 rounded-xl border-l-2 border-primary-container hover:bg-surface-container-highest transition-all duration-300">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-sm font-bold">Paris</h3>
+                <span class="text-primary-container material-symbols-outlined text-sm">architecture</span>
+              </div>
+              <div class="flex justify-between items-end">
+                <span class="text-[10px] text-on-surface-variant" id="paris-label">EUR</span>
+                <span class="font-bold text-xs text-primary-container" id="paris-rate">—</span>
+              </div>
+              <div class="mt-2 text-[10px] font-mono text-secondary tracking-wide" id="time-paris">--:-- --</div>
+            </div>
+
+            <!-- Singapore -->
+            <div class="bg-surface p-4 rounded-xl border-l-2 border-primary-container hover:bg-surface-container-highest transition-all duration-300">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-sm font-bold">Singapore</h3>
+                <span class="text-primary-container material-symbols-outlined text-sm">lan</span>
+              </div>
+              <div class="flex justify-between items-end">
+                <span class="text-[10px] text-on-surface-variant" id="singapore-label">SGD</span>
+                <span class="font-bold text-xs text-primary-container" id="singapore-rate">—</span>
+              </div>
+              <div class="mt-2 text-[10px] font-mono text-secondary tracking-wide" id="time-singapore">--:-- --</div>
+            </div>
+
+          </div>
+          <p class="text-[10px] text-on-surface-variant/50 font-mono uppercase tracking-widest pt-2">
+            Rates: 1 USD → local currency · Source: Frankfurter / ECB · Updated daily
+          </p>
+        </div>
+
+        <!-- Globe.gl Globe -->
+        <div class="w-full lg:w-7/12 relative flex items-center justify-center flex-shrink-0" style="height:600px;">
+          <div class="absolute inset-0 bg-primary-container/10 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+          <div id="globe-container" class="absolute inset-0 z-10"></div>
+          <div class="absolute bottom-4 right-4 z-40 bg-black/60 backdrop-blur-md p-3 border border-white/10 rounded pointer-events-none">
+            <p class="text-[10px] font-mono text-primary-container uppercase">Global Terminals</p>
+            <p class="text-xs font-mono text-white mt-1">76+ Active Locations</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Foundational Mission ─── -->
+  <section class="py-24 bg-surface-container-low border-y border-outline-variant/5">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-5">
+          <h3 class="text-sm uppercase tracking-[0.3em] text-primary-container font-bold mb-6">Foundational Mission</h3>
+          <h2 class="text-5xl font-black text-white leading-none mb-8 uppercase tracking-tighter">Stability. Scale. Sovereignty.</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-primary-container to-transparent mb-12"></div>
+        </div>
+        <div class="md:col-span-7 space-y-12">
+          <div>
+            <h4 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container">account_balance</span>Institutional Integrity
+            </h4>
+            <p class="text-on-surface-variant text-lg leading-relaxed pl-9">We bring the rigor of Wall Street risk management to the fluidity of digital assets. Every analysis is backed by quantitative data and veteran oversight.</p>
+          </div>
+          <div>
+            <h4 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary">hub</span>Decentralized Infrastructure
+            </h4>
+            <p class="text-on-surface-variant text-lg leading-relaxed pl-9">Architecting the future of liquidity. We facilitate the transition from siloed legacy systems to composable, open-source financial stacks.</p>
+          </div>
+          <div>
+            <h4 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container">security</span>Regulatory Precision
+            </h4>
+            <p class="text-on-surface-variant text-lg leading-relaxed pl-9">Navigating the evolving landscape of digital compliance. Our framework ensures that innovation never comes at the cost of security or transparency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Market Intelligence ─── -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-24">
+      <div class="flex justify-between items-end mb-16">
+        <div>
+          <h2 class="text-4xl font-bold text-white tracking-tighter uppercase">Market Intelligence</h2>
+          <p class="text-on-surface-variant mt-2">Executive briefings from the frontier of institutional digital assets.</p>
+        </div>
+        <a class="text-primary-container font-bold flex items-center gap-2 group text-sm uppercase tracking-widest" href="partners.html">
+          View All Media <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+
+        <!-- Article 1 — Feature -->
+        <a href="articles/institutional-pivot.html" class="md:col-span-2 md:row-span-2 bg-surface-container relative rounded-xl overflow-hidden group cursor-pointer border border-white/5 block">
+          <img alt="Abstract Blockchain Data" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuANnaDKA_RPvacanBy4ge00hWZfLVM0hnZV4ee2FpsJYufqCZM7xsPSCGhB2OAVhxceMRxh0VmWTMHO1sYNAOGJwPU0r3i4R9rkcbg5zB9Fgt4LYT57SZ8AuSZNJ7aElW3x5HBXEhjd7BN7-WIFSQ68_6qqoc6_hBZur4GtQ7wKVnovBEGJVZmLwwrbtp-YapmYfkzcnE11rPxo1ZVRG94WyKQDjLups3EkrAEYqKUMiBbh4eWTLc9eSNCgF1gDp1XJ8-LuoRylygc"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-8 flex flex-col justify-end">
+            <span class="text-secondary font-bold text-xs uppercase tracking-widest mb-4">Quarterly Outlook</span>
+            <h3 class="text-3xl font-black text-white mb-4 uppercase tracking-tighter leading-none">The Institutional Pivot: 2024 Liquidity Trends</h3>
+            <p class="text-on-surface-variant line-clamp-2">How major banking entities are structuralizing BTC and ETH allocations within balanced portfolios.</p>
+            <span class="mt-4 text-primary-container text-xs font-bold uppercase tracking-widest flex items-center gap-1">Read Executive Brief <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+          </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="articles/etf-volatility.html" class="md:col-span-2 bg-surface-container-high rounded-xl p-8 flex flex-col justify-between border border-white/5 group cursor-pointer hover:bg-surface-container-highest transition-colors block">
+          <div class="flex justify-between items-start">
+            <span class="text-primary-container font-bold text-xs uppercase tracking-widest">Market Analysis</span>
+            <span class="material-symbols-outlined text-secondary">trending_up</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2 uppercase tracking-tight">ETF Inflow Volatility Analysis</h3>
+            <p class="text-sm text-on-surface-variant">Real-time tracking of institutional vehicle flows across North American exchanges.</p>
+            <span class="mt-4 text-primary-container text-xs font-bold uppercase tracking-widest flex items-center gap-1">Read Brief <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+          </div>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="articles/l2-scaling.html" class="bg-surface-container rounded-xl p-6 border border-white/5 hover:bg-surface-container-highest transition-colors cursor-pointer block">
+          <p class="text-[10px] text-on-surface-variant font-black uppercase mb-4 tracking-widest">Protocol Intel</p>
+          <h4 class="text-white font-bold mb-3 uppercase text-xs">L2 Scaling Metrics Q2</h4>
+          <div class="h-10 w-full flex items-end gap-1 overflow-hidden mb-3">
+            <div class="w-2 bg-secondary/20 h-[40%]"></div>
+            <div class="w-2 bg-secondary/40 h-[60%]"></div>
+            <div class="w-2 bg-secondary/60 h-[50%]"></div>
+            <div class="w-2 bg-secondary/80 h-[90%]"></div>
+            <div class="w-2 bg-secondary h-[75%]"></div>
+          </div>
+          <span class="text-primary-container text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">Read <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+        </a>
+
+        <!-- Article 4 -->
+        <a href="articles/podcast.html" class="bg-surface-container rounded-xl p-6 border border-white/5 hover:bg-surface-container-highest transition-colors cursor-pointer block">
+          <p class="text-[10px] text-on-surface-variant font-black uppercase mb-4 tracking-widest">Media Release</p>
+          <h4 class="text-white font-bold mb-3 uppercase text-xs">Wall Street Podcast</h4>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-container text-3xl">play_circle</span>
+            <span class="text-[10px] text-on-surface-variant uppercase tracking-wider">42 min · Season 2</span>
+          </div>
+          <span class="mt-3 text-primary-container text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">Listen <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Content Split — Elevating Global Market Intelligence ─── -->
+  <section class="py-32 px-8 md:px-24">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aspect-square bg-surface-container-low rounded-xl flex items-center justify-center p-8">
+            <img alt="Institutional handshake" class="w-full h-full object-cover rounded-lg opacity-80"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2-TYs-E3coTwxGOkBAxeAKN9EzEi4Q0ofcE7sxmus0fK3hmgF65-zuGmkOawZVXucKfGGhcqi1V_KdHOmKc-GF2iKn-gt2X2UAoaLHZWhG_wWdY6mZHPIWH_xvq9owNq06ERLIDZlasIYaf5KzNj16SWDgkCOeNTFjcwqTA56iSiLir6kOXDdaRQpAFXL2hF25gB683anTh4J7m6migvmj_6Fhx40d1sAWHKPHttE7aLpLkoNLiHTut859DnkQ4-vkZW9OjsFT_Q"/>
+          </div>
+          <div class="aspect-square bg-surface-container-low rounded-xl flex items-center justify-center p-8 mt-12">
+            <img alt="Digital data visualization" class="w-full h-full object-cover rounded-lg opacity-80"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_cYsDEs9IY8uwJX_u6Ie9dbLxtGFCNuN2FOZa7AFhI6sQN3v5Z0Ff-nJprvTkGU7J3qLAqOT23nhOB3e5l_HNqa8vr9KJkhtlKA5YkLvdqxw_Xc6jXo5TVqY-kCOIVngPZTRqCgbjmNcsu5ukYxCbjaUORyZ681t30qmfoeDuYRcumqP9zbJ_JLIH9TdUFS0O69fx-wVsx0Z2qwGXBTWBVtR9ZsFQymWJII0oFGFXPsF1FNRmABtHpGXp72Xxu3Xdm2yBwDH4ZE"/>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <h3 class="text-4xl font-bold uppercase tracking-tighter mb-8 leading-tight">
+          Elevating Global <br/><span class="text-primary-container">Market Intelligence</span>
+        </h3>
+        <p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+          CryptoMondays serves as the premiere forum for the institutionalization of digital assets. We gather the brightest minds from traditional finance and the blockchain frontier to forge the future of the global ledger.
+        </p>
+        <ul class="space-y-6 mb-12">
+          <li class="flex gap-4 items-start">
+            <span class="text-secondary material-symbols-outlined mt-1">verified</span>
+            <div>
+              <span class="font-bold block uppercase tracking-tight text-sm">Curated Networking</span>
+              <span class="text-on-surface-variant text-sm">High-density interactions with vetted institutional stakeholders.</span>
+            </div>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="text-secondary material-symbols-outlined mt-1">insights</span>
+            <div>
+              <span class="font-bold block uppercase tracking-tight text-sm">Market Benchmarking</span>
+              <span class="text-on-surface-variant text-sm">Direct access to private market data and emerging asset trends.</span>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-4">
+          <a href="events.html#speak" class="bg-surface-container-high text-primary-container border border-primary-container/20 px-8 py-4 rounded-lg uppercase font-bold tracking-widest text-xs hover:bg-primary-container hover:text-on-primary-container transition-all">
+            Apply to Speak
+          </a>
+          <a href="mailto:nominate@cryptomondaysws.com?subject=Speaker%20Nomination" class="bg-transparent text-on-surface-variant border border-outline-variant/30 px-8 py-4 rounded-lg uppercase font-bold tracking-widest text-xs hover:border-primary-container hover:text-primary-container transition-all">
+            Nominate a Speaker
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Next Event — sourced from events.json ─── -->
+  <section id="home-next-event" class="py-14 px-8 md:px-24 bg-surface-container-low border-y border-outline-variant/10" style="display:none;">
+    <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="flex items-center gap-6 min-w-0">
+        <div class="w-1 h-16 bg-secondary flex-shrink-0 rounded-full"></div>
+        <div class="min-w-0">
+          <p class="text-secondary font-mono text-xs tracking-widest uppercase mb-1">Next Event</p>
+          <h3 id="home-event-title" class="text-2xl font-black text-white uppercase tracking-tighter leading-tight truncate"></h3>
+          <div class="flex flex-wrap gap-5 mt-3 text-on-surface-variant text-sm">
+            <span class="flex items-center gap-1 whitespace-nowrap">
+              <span class="material-symbols-outlined text-sm text-primary-container">calendar_today</span>
+              <span id="home-event-date"></span>
+            </span>
+            <span class="flex items-center gap-1 whitespace-nowrap">
+              <span class="material-symbols-outlined text-sm text-primary-container">schedule</span>
+              <span id="home-event-time"></span>
+            </span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm text-primary-container">location_on</span>
+              <span id="home-event-location" class="truncate max-w-[260px]"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-3 flex-shrink-0">
+        <a id="home-event-register" href="events.html" target="_blank" rel="noopener"
+           class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-bold uppercase tracking-tight text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
+          Register Now
+        </a>
+        <a href="events.html"
+           class="border border-outline-variant/30 text-on-surface-variant px-8 py-4 rounded-lg font-bold uppercase tracking-tight text-sm hover:border-primary-container hover:text-primary-container transition-all whitespace-nowrap">
+          All Events
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section class="py-32 px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8">Join the <span class="text-secondary">Vanguard</span></h2>
+      <p class="text-on-surface-variant text-xl mb-12">Secure your invitation to the most exclusive network in the digital asset space.</p>
+      <div class="bg-surface-container-low p-2 rounded-2xl max-w-xl mx-auto flex flex-col md:flex-row gap-2">
+        <input class="flex-grow bg-transparent border-none px-6 py-4 focus:ring-0 text-lg text-white" placeholder="Institutional Email" type="email"/>
+        <button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-black uppercase tracking-tight">
+          Join the Room
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── Footer ─── -->
+<footer class="bg-[#121316] w-full border-t border-white/5">
+  <div class="grid grid-cols-1 gap-12 px-8 py-16 max-w-screen-2xl mx-auto font-['Inter'] text-sm md:grid-cols-3">
+    <div>
+      <a href="index.html" class="flex items-center gap-2 mb-6 group no-underline w-fit">
+        <span class="text-xl font-black text-white uppercase tracking-tighter group-hover:text-primary-container transition-colors">CRYPTOMONDAYS</span>
+        <img src="images/WallStreet-Sign.png" alt="Wall Street" class="h-16 w-auto rounded opacity-80 group-hover:opacity-100 transition-opacity"/>
+      </a>
+      <p class="text-slate-500 leading-relaxed mb-6">The premier executive forum for the convergence of traditional capital markets and distributed ledger technology.</p>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary-container cursor-pointer transition-colors">public</span>
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary-container cursor-pointer transition-colors">hub</span>
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary-container cursor-pointer transition-colors">mail</span>
+      </div>
+    </div>
+    <div>
+      <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Ecosystem</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="index.html">Home</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="events.html">Events</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="partners.html">Media</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Legal &amp; Governance</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="#">Privacy Policy</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="#">Terms of Service</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="#">Compliance</a></li>
+        <li><a class="text-slate-500 hover:text-primary-container transition-all" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/5 py-8 px-8 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-slate-500 text-[10px] uppercase tracking-widest">© 2026 CryptoMondays Wall Street. Institutional Precision.</p>
+    <div class="flex gap-6 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+      <span>FX Data: ECB via Frankfurter.app</span>
+      <span>Uptime: 99.99%</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS — Globe.gl + FX Currency Data
+     All data sources: open, free, no API key required
+     Globe.gl: MIT License (https://github.com/vasturiano/globe.gl)
+     FX data: Frankfurter API (ECB data, free, no key)
+     ═══════════════════════════════════════════════════════ -->
+<script>
+(function() {
+
+  // ── CryptoMondays chapter cities (76 locations) ─────────
+  const CM_CITIES = [
+    // North America
+    { name: 'New York City — Wall St Hub', lat: 40.7128,  lng: -74.0060,  spotlight: true  },
+    { name: 'Miami',                        lat: 25.7617,  lng: -80.1918,  spotlight: false },
+    { name: 'Austin',                       lat: 30.2672,  lng: -97.7431,  spotlight: false },
+    { name: 'Los Angeles',                  lat: 34.0522,  lng:-118.2437,  spotlight: false },
+    { name: 'San Francisco',                lat: 37.7749,  lng:-122.4194,  spotlight: false },
+    { name: 'Chicago',                      lat: 41.8781,  lng: -87.6298,  spotlight: false },
+    { name: 'Boston',                       lat: 42.3601,  lng: -71.0589,  spotlight: false },
+    { name: 'Denver',                       lat: 39.7392,  lng:-104.9903,  spotlight: false },
+    { name: 'Seattle',                      lat: 47.6062,  lng:-122.3321,  spotlight: false },
+    { name: 'Atlanta',                      lat: 33.7490,  lng: -84.3880,  spotlight: false },
+    { name: 'Las Vegas',                    lat: 36.1699,  lng:-115.1398,  spotlight: false },
+    { name: 'Nashville',                    lat: 36.1627,  lng: -86.7816,  spotlight: false },
+    { name: 'Dallas',                       lat: 32.7767,  lng: -96.7970,  spotlight: false },
+    { name: 'Phoenix',                      lat: 33.4484,  lng:-112.0740,  spotlight: false },
+    { name: 'Houston',                      lat: 29.7604,  lng: -95.3698,  spotlight: false },
+    { name: 'Minneapolis',                  lat: 44.9778,  lng: -93.2650,  spotlight: false },
+    { name: 'New Orleans',                  lat: 29.9511,  lng: -90.0715,  spotlight: false },
+    { name: 'Portland',                     lat: 45.5051,  lng:-122.6750,  spotlight: false },
+    { name: 'Salt Lake City',               lat: 40.7608,  lng:-111.8910,  spotlight: false },
+    { name: 'Toronto',                      lat: 43.6532,  lng: -79.3832,  spotlight: false },
+    { name: 'Montreal',                     lat: 45.5017,  lng: -73.5673,  spotlight: false },
+    { name: 'Vancouver',                    lat: 49.2827,  lng:-123.1207,  spotlight: false },
+    { name: 'Calgary',                      lat: 51.0447,  lng:-114.0719,  spotlight: false },
+    { name: 'Mexico City',                  lat: 19.4326,  lng: -99.1332,  spotlight: false },
+    // Europe
+    { name: 'London',                       lat: 51.5074,  lng:  -0.1278,  spotlight: false },
+    { name: 'Amsterdam',                    lat: 52.3676,  lng:   4.9041,  spotlight: false },
+    { name: 'Berlin',                       lat: 52.5200,  lng:  13.4050,  spotlight: false },
+    { name: 'Paris',                        lat: 48.8566,  lng:   2.3522,  spotlight: false },
+    { name: 'Barcelona',                    lat: 41.3851,  lng:   2.1734,  spotlight: false },
+    { name: 'Madrid',                       lat: 40.4168,  lng:  -3.7038,  spotlight: false },
+    { name: 'Lisbon',                       lat: 38.7169,  lng:  -9.1395,  spotlight: false },
+    { name: 'Algarve, Portugal',            lat: 37.0179,  lng:  -7.9307,  spotlight: false },
+    { name: 'Zurich',                       lat: 47.3769,  lng:   8.5417,  spotlight: false },
+    { name: 'Geneva',                       lat: 46.2044,  lng:   6.1432,  spotlight: false },
+    { name: 'Stockholm',                    lat: 59.3293,  lng:  18.0686,  spotlight: false },
+    { name: 'Copenhagen',                   lat: 55.6761,  lng:  12.5683,  spotlight: false },
+    { name: 'Oslo',                         lat: 59.9139,  lng:  10.7522,  spotlight: false },
+    { name: 'Helsinki',                     lat: 60.1699,  lng:  24.9384,  spotlight: false },
+    { name: 'Dublin',                       lat: 53.3498,  lng:  -6.2603,  spotlight: false },
+    { name: 'Prague',                       lat: 50.0755,  lng:  14.4378,  spotlight: false },
+    { name: 'Vienna',                       lat: 48.2082,  lng:  16.3738,  spotlight: false },
+    { name: 'Warsaw',                       lat: 52.2297,  lng:  21.0122,  spotlight: false },
+    { name: 'Budapest',                     lat: 47.4979,  lng:  19.0402,  spotlight: false },
+    { name: 'Bucharest',                    lat: 44.4268,  lng:  26.1025,  spotlight: false },
+    { name: 'Athens',                       lat: 37.9838,  lng:  23.7275,  spotlight: false },
+    { name: 'Rome',                         lat: 41.9028,  lng:  12.4964,  spotlight: false },
+    { name: 'Milan',                        lat: 45.4642,  lng:   9.1900,  spotlight: false },
+    { name: 'Monaco',                       lat: 43.7384,  lng:   7.4246,  spotlight: false },
+    { name: 'Edinburgh',                    lat: 55.9533,  lng:  -3.1883,  spotlight: false },
+    // Middle East / Africa
+    { name: 'Dubai',                        lat: 25.2048,  lng:  55.2708,  spotlight: false },
+    { name: 'Abu Dhabi',                    lat: 24.4539,  lng:  54.3773,  spotlight: false },
+    { name: 'Tel Aviv',                     lat: 32.0853,  lng:  34.7818,  spotlight: false },
+    { name: 'Istanbul',                     lat: 41.0082,  lng:  28.9784,  spotlight: false },
+    { name: 'Riyadh',                       lat: 24.7136,  lng:  46.6753,  spotlight: false },
+    { name: 'Cape Town',                    lat:-33.9249,  lng:  18.4241,  spotlight: false },
+    { name: 'Lagos',                        lat:  6.5244,  lng:   3.3792,  spotlight: false },
+    { name: 'Nairobi',                      lat: -1.2921,  lng:  36.8219,  spotlight: false },
+    // Asia Pacific
+    { name: 'Singapore',                    lat:  1.3521,  lng: 103.8198,  spotlight: false },
+    { name: 'Hong Kong',                    lat: 22.3193,  lng: 114.1694,  spotlight: false },
+    { name: 'Tokyo',                        lat: 35.6762,  lng: 139.6503,  spotlight: false },
+    { name: 'Seoul',                        lat: 37.5665,  lng: 126.9780,  spotlight: false },
+    { name: 'Shanghai',                     lat: 31.2304,  lng: 121.4737,  spotlight: false },
+    { name: 'Taipei',                       lat: 25.0330,  lng: 121.5654,  spotlight: false },
+    { name: 'Bangkok',                      lat: 13.7563,  lng: 100.5018,  spotlight: false },
+    { name: 'Kuala Lumpur',                 lat:  3.1390,  lng: 101.6869,  spotlight: false },
+    { name: 'Jakarta',                      lat: -6.2088,  lng: 106.8456,  spotlight: false },
+    { name: 'Mumbai',                       lat: 19.0760,  lng:  72.8777,  spotlight: false },
+    { name: 'Delhi',                        lat: 28.6139,  lng:  77.2090,  spotlight: false },
+    { name: 'Bengaluru',                    lat: 12.9716,  lng:  77.5946,  spotlight: false },
+    { name: 'Sydney',                       lat:-33.8688,  lng: 151.2093,  spotlight: false },
+    { name: 'Melbourne',                    lat:-37.8136,  lng: 144.9631,  spotlight: false },
+    { name: 'Auckland',                     lat:-36.8485,  lng: 174.7633,  spotlight: false },
+    // South America
+    { name: 'São Paulo',                    lat:-23.5505,  lng: -46.6333,  spotlight: false },
+    { name: 'Buenos Aires',                 lat:-34.6037,  lng: -58.3816,  spotlight: false },
+    { name: 'Bogotá',                       lat:  4.7110,  lng: -74.0721,  spotlight: false },
+    { name: 'Lima',                         lat:-12.0464,  lng: -77.0428,  spotlight: false },
+    { name: 'Santiago',                     lat:-33.4489,  lng: -70.6693,  spotlight: false },
+  ];
+
+  // NYC ring data for blinking pulse effect
+  const NYC_RINGS = [{ lat: 40.7128, lng: -74.0060 }];
+
+  // ── Globe.gl initialization ──────────────────────────────
+  // requestAnimationFrame ensures the container has its final layout dimensions
+  // before Globe.gl measures it for the WebGL canvas.
+  requestAnimationFrame(function initGlobe() {
+    const container = document.getElementById('globe-container');
+    if (!container || typeof Globe === 'undefined') return;
+
+    // If container has no real dimensions yet, defer one more frame
+    if (container.clientWidth === 0) {
+      requestAnimationFrame(initGlobe);
+      return;
+    }
+
+    const myGlobe = Globe()(container);
+    myGlobe
+      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+      .backgroundColor('rgba(0,0,0,0)')
+      .showAtmosphere(true)
+      .atmosphereColor('#5fd1ff')
+      .atmosphereAltitude(0.16)
+      // Regular city dots
+      .pointsData(CM_CITIES)
+      .pointLat('lat')
+      .pointLng('lng')
+      .pointColor(d => d.spotlight ? '#5fd1ff' : '#59ffa3')
+      .pointAltitude(0.015)
+      .pointRadius(d => d.spotlight ? 0.6 : 0.25)
+      .pointLabel(d =>
+        `<div style="background:rgba(0,0,0,0.85);color:#fff;padding:4px 10px;
+         border-radius:4px;font-size:11px;font-family:Inter,sans-serif;
+         border:1px solid rgba(255,255,255,0.15);white-space:nowrap">${d.name}</div>`
+      )
+      // NYC blinking pulse rings
+      .ringsData(NYC_RINGS)
+      .ringLat('lat')
+      .ringLng('lng')
+      .ringColor(() => t => `rgba(95,209,255,${Math.max(0, 1 - t)})`)
+      .ringMaxRadius(4)
+      .ringPropagationSpeed(2)
+      .ringRepeatPeriod(1400);
+
+    // Auto-rotate, no zoom, altitude 1.8 for a well-framed full sphere
+    myGlobe.controls().autoRotate      = true;
+    myGlobe.controls().autoRotateSpeed = 0.45;
+    myGlobe.controls().enableZoom      = false;
+    myGlobe.pointOfView({ lat: 20, lng: -20, altitude: 1.8 });
+  });
+
+  // ── FX Currency Rates (Frankfurter / ECB — free, no key) ──
+  // Fallback static rates shown if fetch fails
+  const FX_FALLBACK = { GBP: '0.7900', EUR: '0.9250', SGD: '1.3500' };
+
+  async function loadFXRates() {
+    try {
+      const res = await fetch(
+        'https://api.frankfurter.app/latest?from=USD&to=GBP,EUR,SGD',
+        { cache: 'force-cache' }   // browser caches for session
+      );
+      if (!res.ok) throw new Error('FX fetch failed');
+      const data = await res.json();
+      const rates = data.rates;
+
+      const map = [
+        { id: 'london',    key: 'GBP', label: '1 USD →' },
+        { id: 'paris',     key: 'EUR', label: '1 USD →' },
+        { id: 'singapore', key: 'SGD', label: '1 USD →' }
+      ];
+
+      map.forEach(({ id, key, label }) => {
+        const labelEl = document.getElementById(`${id}-label`);
+        const rateEl  = document.getElementById(`${id}-rate`);
+        if (labelEl && rateEl && rates[key]) {
+          labelEl.textContent = `${key}`;
+          rateEl.textContent  = rates[key].toFixed(4);
+        }
+      });
+
+    } catch (e) {
+      // Use static fallback — acceptable for a daily-updated display
+      const fb = [
+        { id: 'london',    val: FX_FALLBACK.GBP, lbl: 'GBP*' },
+        { id: 'paris',     val: FX_FALLBACK.EUR, lbl: 'EUR*' },
+        { id: 'singapore', val: FX_FALLBACK.SGD, lbl: 'SGD*' }
+      ];
+      fb.forEach(({ id, val, lbl }) => {
+        const l = document.getElementById(`${id}-label`);
+        const r = document.getElementById(`${id}-rate`);
+        if (l) l.textContent = lbl;
+        if (r) r.textContent = val;
+      });
+    }
+  }
+
+  loadFXRates();
+
+  // ── Next Event banner (reads events.json — no API key client-side) ──────────
+  async function loadNextEvent() {
+    try {
+      const res = await fetch('events.json');
+      if (!res.ok) return;
+      const data = await res.json();
+      const next = data.upcoming && data.upcoming[0];
+      if (!next) return;
+
+      const section = document.getElementById('home-next-event');
+      const titleEl = document.getElementById('home-event-title');
+      const dateEl  = document.getElementById('home-event-date');
+      const timeEl  = document.getElementById('home-event-time');
+      const locEl   = document.getElementById('home-event-location');
+      const regEl   = document.getElementById('home-event-register');
+
+      if (titleEl) titleEl.textContent = next.title;
+      if (dateEl)  dateEl.textContent  = next.date_label;
+      if (timeEl)  timeEl.textContent  = next.time_label;
+      if (locEl)   locEl.textContent   = next.location;
+      if (regEl)   regEl.href          = next.url;
+      if (section) section.style.display = '';
+    } catch (_) {
+      // Silently hide if events.json unavailable
+    }
+  }
+  loadNextEvent();
+
+  // ── Live Local Time for GIN city cards ──────────────────
+  const CITY_TZ = [
+    { id: 'nyc',       tz: 'America/New_York'  },
+    { id: 'miami',     tz: 'America/New_York'  },
+    { id: 'austin',    tz: 'America/Chicago'   },
+    { id: 'london',    tz: 'Europe/London'     },
+    { id: 'paris',     tz: 'Europe/Paris'      },
+    { id: 'singapore', tz: 'Asia/Singapore'    },
+  ];
+
+  function updateCityTimes() {
+    const now = new Date();
+    CITY_TZ.forEach(({ id, tz }) => {
+      const el = document.getElementById(`time-${id}`);
+      if (!el) return;
+      try {
+        el.textContent = now.toLocaleTimeString('en-US', {
+          timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: true
+        });
+      } catch (e) { /* timezone not supported by browser — leave as is */ }
+    });
+  }
+
+  updateCityTimes();
+  setInterval(updateCityTimes, 30000); // refresh every 30 seconds
+
+})();
+</script>
+
+</body>
+</html>

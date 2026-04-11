@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partners &amp; Media | CryptoMondays</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Chart.js — open-source MIT, no API key required -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script id="tailwind-config">
+  tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#92d0c1","surface-variant":"#343538","on-primary-fixed-variant":"#004d64","surface-container-lowest":"#0d0e11","tertiary":"#aeecdd","on-secondary-fixed":"#00210f","inverse-surface":"#e3e2e6","background":"#121316","on-surface":"#e3e2e6","error-container":"#93000a","primary-fixed":"#bee9ff","on-background":"#e3e2e6","on-tertiary-fixed-variant":"#095045","surface":"#121316","on-tertiary-fixed":"#00201b","surface-container-high":"#292a2d","on-secondary-container":"#005f35","on-surface-variant":"#bdc8cf","inverse-primary":"#006684","secondary":"#59ffa3","error":"#ffb4ab","primary-fixed-dim":"#68d3ff","outline-variant":"#3e484e","on-primary":"#003546","tertiary-fixed-dim":"#95d3c4","on-error":"#690005","on-error-container":"#ffdad6","primary-container":"#5fd1ff","surface-bright":"#38393c","surface-container-highest":"#343538","on-secondary":"#00391d","on-primary-fixed":"#001f2a","secondary-container":"#00e386","surface-tint":"#68d3ff","on-tertiary":"#00382f","on-tertiary-container":"#1a5a4f","surface-container":"#1f1f23","primary":"#b8e7ff","secondary-fixed":"#59ffa3","on-secondary-fixed-variant":"#00522d","inverse-on-surface":"#303034","on-primary-container":"#005872","surface-container-low":"#1b1b1f","secondary-fixed-dim":"#00e386","tertiary-fixed":"#b0efdf","surface-dim":"#121316","outline":"#879299"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},fontFamily:{"headline":["Inter"],"body":["Inter"],"label":["Inter"]}}}}
+</script>
+<style>
+  body{font-family:'Inter',sans-serif;}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  /* Partner logo cell — text-only placeholder until logos supplied */
+  .partner-cell{
+    background:#1b1b1f;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:1.5rem 1rem;gap:0.5rem;
+    border:1px solid rgba(62,72,78,0.2);
+    transition:background 0.2s,border-color 0.2s;
+    cursor:default;min-height:90px;
+  }
+  .partner-cell:hover{background:#1f1f23;border-color:rgba(95,209,255,0.2);}
+  .partner-cell .logo-placeholder{
+    width:100%;height:36px;display:flex;align-items:center;justify-content:center;
+  }
+  .partner-cell .logo-placeholder img{
+    max-height:36px;max-width:100%;object-fit:contain;opacity:0.65;filter:grayscale(1);
+    transition:opacity 0.2s,filter 0.2s;
+  }
+  .partner-cell:hover .logo-placeholder img{opacity:1;filter:grayscale(0);}
+  .partner-cell .partner-name{
+    font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+    color:#879299;text-align:center;line-height:1.2;
+  }
+  /* Crypto chart cards */
+  .chart-card canvas{display:block;}
+</style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- ─── TopNavBar ─── -->
+<nav class="fixed top-0 w-full z-50 bg-[#121316]/80 backdrop-blur-xl shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
+  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+    <a href="index.html" class="flex items-center gap-2 group no-underline">
+      <span class="text-lg font-black tracking-tighter text-white uppercase group-hover:text-primary-container transition-colors">CryptoMondays</span>
+      <img src="images/WallStreet-Sign.png" alt="Wall Street" class="h-14 w-auto rounded opacity-80 group-hover:opacity-100 transition-opacity"/>
+    </a>
+    <div class="hidden md:flex items-center gap-8 font-inter tracking-tight font-medium uppercase text-sm">
+      <a class="text-slate-400 hover:text-white transition-colors" href="index.html">Home</a>
+      <a class="text-slate-400 hover:text-white transition-colors" href="events.html">Events</a>
+      <a class="text-[#5FD1FF] border-b-2 border-[#5FD1FF] pb-1" href="partners.html">Partners &amp; Media</a>
+      <a class="text-slate-400 hover:text-white transition-colors" href="portfolio.html">Portfolio</a>
+    </div>
+    <a href="events.html#speak" class="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg font-medium text-sm scale-95 active:opacity-80 hover:opacity-90 transition-all">
+      Apply to Speak
+    </a>
+  </div>
+</nav>
+
+<main class="pt-32 pb-24">
+
+  <!-- ─── Hero ─── -->
+  <header class="max-w-screen-xl mx-auto px-8 mb-24">
+    <div class="flex flex-col gap-6 max-w-3xl">
+      <span class="text-secondary font-medium tracking-[0.2em] uppercase text-xs">Institutional Network</span>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none">Partners &amp; Media</h1>
+      <p class="text-on-surface-variant text-xl leading-relaxed">Bridging the institutional gap through strategic alliances and authoritative industry discourse.</p>
+    </div>
+  </header>
+
+  <!-- ─── Strategic Partners Grid ─── -->
+  <!--
+    LOGO INSTRUCTIONS:
+    Each .logo-placeholder div contains an <img> tag.
+    Replace the src="" attribute with your logo file path.
+    Recommended: white/light PNG or SVG on transparent background.
+    Suggested size: 200×60px @ 2x retina.
+    Place logo files in: Website/images/partners/
+  -->
+  <section class="max-w-screen-xl mx-auto px-8 mb-32">
+    <div class="bg-surface-container-low rounded-xl p-12 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-5 pointer-events-none"
+        style="background-image:radial-gradient(circle at 2px 2px,#bdc8cf 1px,transparent 0);background-size:40px 40px;"></div>
+
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+        <div>
+          <h2 class="text-2xl font-bold mb-2">Strategic Partners</h2>
+          <p class="text-on-surface-variant text-sm">Global leaders driving the digital asset evolution.</p>
+        </div>
+        <div class="h-px flex-grow bg-outline-variant/15 mx-8 hidden md:block"></div>
+      </div>
+
+      <!-- Partner grid — 6 cols desktop / 4 tablet / 3 mobile -->
+      <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Vault12"/></div>
+          <span class="partner-name">Vault12</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="CoinDesk"/></div>
+          <span class="partner-name">CoinDesk</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="The Tie"/></div>
+          <span class="partner-name">The Tie</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Bitcoin Opportunity Fund"/></div>
+          <span class="partner-name">Bitcoin Opportunity Fund</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="21Shares"/></div>
+          <span class="partner-name">21Shares</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Coinbase"/></div>
+          <span class="partner-name">Coinbase</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Valmar Capital"/></div>
+          <span class="partner-name">Valmar Capital</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Chorus One"/></div>
+          <span class="partner-name">Chorus One</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="BitGo"/></div>
+          <span class="partner-name">BitGo</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Kaiko"/></div>
+          <span class="partner-name">Kaiko</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Chainlink"/></div>
+          <span class="partner-name">Chainlink</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="ACA"/></div>
+          <span class="partner-name">ACA</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="NFT VIP"/></div>
+          <span class="partner-name">NFT VIP</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="CORE"/></div>
+          <span class="partner-name">CORE</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="ICP Canada"/></div>
+          <span class="partner-name">ICP Canada</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Stellar"/></div>
+          <span class="partner-name">Stellar</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="SoSo"/></div>
+          <span class="partner-name">SoSo</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="XDC"/></div>
+          <span class="partner-name">XDC</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Troutman Pepper Locke"/></div>
+          <span class="partner-name">Troutman Pepper Locke</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="ReserveOne"/></div>
+          <span class="partner-name">ReserveOne</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="iHeartRadio"/></div>
+          <span class="partner-name">iHeartRadio</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Market Rebellion"/></div>
+          <span class="partner-name">Market Rebellion</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Axos"/></div>
+          <span class="partner-name">Axos</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="N3XT"/></div>
+          <span class="partner-name">N3XT</span>
+        </div>
+
+        <div class="partner-cell rounded-lg">
+          <div class="logo-placeholder"><img src="" alt="Consensus"/></div>
+          <span class="partner-name">Consensus</span>
+        </div>
+
+      </div>
+      <p class="text-[10px] text-on-surface-variant/40 font-mono uppercase tracking-widest mt-6 text-center">
+        Place logo files in Website/images/partners/ and set the src= attribute for each img above
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Media Highlights ─── -->
+  <section class="max-w-screen-xl mx-auto px-8 mb-32">
+    <h2 class="text-3xl font-bold tracking-tight mb-12">Media Highlights</h2>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+      <!-- Large Featured Media -->
+      <div class="md:col-span-7 group cursor-pointer">
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-6">
+          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60 z-10"></div>
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRbQw01GnPR5wUZJg9PPr8NX8XPzSnDR4vkDMltgZ0TUVX61QbrQXTIVos5Axq6VtJuuWxDaSe86nFBRrFfgmYkAyDngDIAePMLXVV4tcNCBbrLONtzWVgqzinkAEQahKgIh4KSWYQF1cIudYRqZYo6hbSVgs_ZTJFAWTbGYmguVNd47_E7nGwIyT_TNPkkFCRrYCzZobgYAUOuXxBH0zKrKgfJiG5s1vFnn9G6u85XtIZ0K7_X_8xF0AdJgkJ1d7kpBt_oVEESeE"
+            alt="Institutional Summit"/>
+          <div class="absolute bottom-6 left-6 z-20">
+            <span class="bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm mb-3 inline-block">Featured Coverage</span>
+            <h3 class="text-2xl font-bold text-white max-w-lg">Decentralizing Wall Street: The 2024 Institutional Summit Highlights</h3>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-on-surface-variant text-sm mb-2">
+          <span class="font-bold text-primary">Bloomberg Technology</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span>May 12, 2024</span>
+        </div>
+      </div>
+
+      <!-- Secondary Media Stack -->
+      <div class="md:col-span-5 flex flex-col gap-8">
+
+        <div class="flex gap-6 group cursor-pointer">
+          <div class="w-32 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+            <img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC41zyDblvytpKyJF5Thpy4lzzwBw37n-zl_IP3Jz0j_98zsF7yuk8QvK95ZDD2QRPacGkSoH-rbOwHyDKYP836fLJAHQwR-1ONCme1Ve-540oc0njvJMAgReo0pFf1lRueRF_0yuYLVc4-2x_VNgdeUxeft-87kvTUEZhfC7JlO_m_Jpc8lB0DMh5Pu4TrgVb0vk7VVBPolqolSY2Gz9rrjLu8c5NTHjLk8DfsUCEqBieULhVF_WUp_qM5ElQcKXpf3tcTDaqer2g"
+              alt="Forbes Finance"/>
+          </div>
+          <div class="flex flex-col justify-center">
+            <span class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">Forbes Finance</span>
+            <h4 class="text-base font-bold leading-tight group-hover:text-primary transition-colors">CryptoMondays: Where Institutional Capital Meets Innovation</h4>
+          </div>
+        </div>
+
+        <div class="flex gap-6 group cursor-pointer">
+          <div class="w-32 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+            <img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVR4-nDqXkrooYODpAHYlDtJ1ULEBRaJMbxpbQBT21hTulrR7-xxRX_FeJcnQH0EE5_v8q-jwmT8N-uYIFeil2kNlL5NZ08N-yqtiR8Kfw7irZafF252vPlijAhNGBA7QXnrHsNTaointPYzxcQbOAYcUtyw3GxqSMFZAVUGxbSm3P0FEpbjA42WY2_LtG9DBCquCFxwTRopsk8VqJ1OxA1Shh8TNmuK4U0eCdLCe1xg8x2R0OwghU5-Zn5jPxn1Op5t-kNDhPOCY"
+              alt="CNBC Digital"/>
+          </div>
+          <div class="flex flex-col justify-center">
+            <span class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">CNBC Digital</span>
+            <h4 class="text-base font-bold leading-tight group-hover:text-primary transition-colors">The Networking Powerhouse Transforming Mondays in Manhattan</h4>
+          </div>
+        </div>
+
+        <div class="flex gap-6 group cursor-pointer">
+          <div class="w-32 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+            <img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjmrsIphxRhjumM-5L_vhiaVJIi4I6nRJYYnAdnUZXwf5JCMTdr8aNlcmwVGe4bbAcmu4uoQ3cAtXMX6hYLl9o7t48mW-Me9ij6h9nEmViCBIVpkYbkR6jArwlaw63afWbigmVEKYUdYAtAs8YItazurryUPuvz4SULLcDVmpqeo6d6hqe3a_iqgVCWUVwaevxKm7CCgsb5He5-Olo2BDT9TJw5nSKfqHkwI2AFib-shLmBedueZzUP9uyxsMzlX_GU4vzHiYd5SY"
+              alt="CoinDesk"/>
+          </div>
+          <div class="flex flex-col justify-center">
+            <span class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1">CoinDesk</span>
+            <h4 class="text-base font-bold leading-tight group-hover:text-primary transition-colors">Inside the Closed-Door Discussions of NYC's Elite Crypto Circle</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Live Crypto Charts (CoinGecko free API + Chart.js) ─── -->
+  <!--
+    DATA SOURCE: CoinGecko Public API — free, no API key required
+    https://www.coingecko.com/en/api — /simple/price + /coins/{id}/market_chart
+    Rate limit: ~30 req/min on free public endpoint.
+    FALLBACK: If fetch fails, static sparkline bars are shown.
+    Chart.js: MIT license (https://www.chartjs.org/)
+  -->
+  <section class="max-w-screen-xl mx-auto px-8 mb-32">
+    <div class="flex items-baseline justify-between mb-8">
+      <h2 class="text-2xl font-bold text-white tracking-tight">Live Market Context</h2>
+      <span class="text-[10px] text-on-surface-variant/50 font-mono uppercase tracking-widest">Source: CoinGecko · No key required · Updated on load</span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+      <!-- BTC -->
+      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">BTC / USD</span>
+          <span id="btc-change" class="text-secondary text-xs font-bold">—</span>
+        </div>
+        <div class="h-14 w-full relative mb-3">
+          <canvas id="chart-btc"></canvas>
+          <!-- static fallback shown until JS loads -->
+          <div id="fallback-btc" class="absolute inset-0 flex items-end gap-[2px] px-1">
+            <div class="flex-1 bg-secondary/20 h-[40%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[60%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/40 h-[50%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[75%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/60 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[80%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/80 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary h-[90%] rounded-sm"></div>
+          </div>
+        </div>
+        <p class="text-xl font-bold text-white" id="btc-price">Loading…</p>
+      </div>
+
+      <!-- ETH -->
+      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">ETH / USD</span>
+          <span id="eth-change" class="text-secondary text-xs font-bold">—</span>
+        </div>
+        <div class="h-14 w-full relative mb-3">
+          <canvas id="chart-eth"></canvas>
+          <div id="fallback-eth" class="absolute inset-0 flex items-end gap-[2px] px-1">
+            <div class="flex-1 bg-secondary/20 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[45%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/40 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[50%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/60 h-[70%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[60%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/80 h-[80%] rounded-sm"></div><div class="flex-1 bg-secondary h-[75%] rounded-sm"></div>
+          </div>
+        </div>
+        <p class="text-xl font-bold text-white" id="eth-price">Loading…</p>
+      </div>
+
+      <!-- SOL -->
+      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">SOL / USD</span>
+          <span id="sol-change" class="text-xs font-bold">—</span>
+        </div>
+        <div class="h-14 w-full relative mb-3">
+          <canvas id="chart-sol"></canvas>
+          <div id="fallback-sol" class="absolute inset-0 flex items-end gap-[2px] px-1">
+            <div class="flex-1 bg-error/30 h-[70%] rounded-sm"></div><div class="flex-1 bg-error/40 h-[60%] rounded-sm"></div>
+            <div class="flex-1 bg-error/50 h-[75%] rounded-sm"></div><div class="flex-1 bg-error/60 h-[80%] rounded-sm"></div>
+            <div class="flex-1 bg-error/70 h-[65%] rounded-sm"></div><div class="flex-1 bg-error/80 h-[85%] rounded-sm"></div>
+            <div class="flex-1 bg-error/90 h-[70%] rounded-sm"></div><div class="flex-1 bg-error h-[90%] rounded-sm"></div>
+          </div>
+        </div>
+        <p class="text-xl font-bold text-white" id="sol-price">Loading…</p>
+      </div>
+
+      <!-- LINK -->
+      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">LINK / USD</span>
+          <span id="link-change" class="text-secondary text-xs font-bold">—</span>
+        </div>
+        <div class="h-14 w-full relative mb-3">
+          <canvas id="chart-link"></canvas>
+          <div id="fallback-link" class="absolute inset-0 flex items-end gap-[2px] px-1">
+            <div class="flex-1 bg-secondary/20 h-[30%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[50%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/40 h-[40%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[60%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/60 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[75%] rounded-sm"></div>
+            <div class="flex-1 bg-secondary/80 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary h-[85%] rounded-sm"></div>
+          </div>
+        </div>
+        <p class="text-xl font-bold text-white" id="link-price">Loading…</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Become a Featured Partner ─── -->
+  <section class="max-w-screen-xl mx-auto px-8 mb-32">
+    <div class="bg-surface-container-high rounded-xl p-12 md:p-20 relative overflow-hidden flex flex-col items-center text-center">
+      <div class="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
+        <span class="material-symbols-outlined text-[400px]">hub</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Become a Featured Partner</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl mb-10 leading-relaxed">
+        Interested in sponsorship, co-branding, or strategic alignment with the CryptoMondays Wall Street network? Let's build something meaningful together.
+      </p>
+      <form class="flex flex-col md:flex-row gap-4 w-full max-w-md relative z-10" onsubmit="return false;">
+        <input class="flex-grow bg-surface-container-highest border-none rounded-lg px-6 py-4 text-on-surface placeholder:text-on-surface-variant focus:ring-1 focus:ring-primary transition-all"
+          placeholder="Business Email Address" type="email"/>
+        <button class="bg-primary-container text-on-primary-container font-bold px-8 py-4 rounded-lg hover:brightness-110 transition-all">
+          Request
+        </button>
+      </form>
+      <p class="mt-6 text-on-surface-variant text-[10px] uppercase tracking-widest opacity-50">Partnership &amp; Sponsorship Inquiries · Institutional Partners Only</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── Footer ─── -->
+<footer class="bg-[#121316] w-full border-t border-white/5">
+  <div class="grid grid-cols-1 gap-12 px-8 py-16 max-w-screen-2xl mx-auto font-['Inter'] text-sm md:grid-cols-3">
+    <div>
+      <a href="index.html" class="flex items-center gap-2 mb-6 group no-underline w-fit">
+        <span class="text-xl font-black text-white uppercase tracking-tighter group-hover:text-primary-container transition-colors">CRYPTOMONDAYS WS</span>
+        <img src="images/WallStreet-Sign.png" alt="Wall Street" class="h-16 w-auto rounded opacity-80 group-hover:opacity-100 transition-opacity"/>
+      </a>
+      <p class="text-slate-500 leading-relaxed mb-6">The premier executive forum for the convergence of traditional capital markets and distributed ledger technology.</p>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">public</span>
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">hub</span>
+        <span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">mail</span>
+      </div>
+    </div>
+    <div>
+      <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Ecosystem</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="index.html">Home</a></li>
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="events.html">Events</a></li>
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="partners.html">Media</a></li>
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Legal &amp; Governance</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="#">Privacy Policy</a></li>
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="#">Terms of Service</a></li>
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="#">SEC Disclosures</a></li>
+        <li><a class="text-slate-500 hover:text-primary transition-all" href="#">Brand Assets</a></li>
+      </ul>
+    </div>
+  </div>
+    <div class="border-t border-white/5 py-8 px-8 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-slate-500 text-[10px] uppercase tracking-widest">© 2026 CryptoMondays Wall Street. Institutional Precision.</p>
+    <div class="flex gap-6 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+      <span>FX Data: ECB via Frankfurter.app</span>
+      <span>Uptime: 99.99%</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════
+     CRYPTO CHART SCRIPTS
+     Source: CoinGecko Public API — free tier, no API key
+     Library: Chart.js v4 — MIT license
+     Fallback: static bar sparklines shown if fetch fails
+     ══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+
+  const COINS = [
+    { id: 'bitcoin',   cgId: 'bitcoin',   priceEl: 'btc-price',  changeEl: 'btc-change',  chartId: 'chart-btc',  fallbackId: 'fallback-btc' },
+    { id: 'ethereum',  cgId: 'ethereum',  priceEl: 'eth-price',  changeEl: 'eth-change',  chartId: 'chart-eth',  fallbackId: 'fallback-eth' },
+    { id: 'solana',    cgId: 'solana',    priceEl: 'sol-price',  changeEl: 'sol-change',  chartId: 'chart-sol',  fallbackId: 'fallback-sol' },
+    { id: 'chainlink', cgId: 'chainlink', priceEl: 'link-price', changeEl: 'link-change', chartId: 'chart-link', fallbackId: 'fallback-link' }
+  ];
+
+  const CHART_OPTS = (color) => ({
+    type: 'line',
+    data: { labels: [], datasets: [{ data: [], borderColor: color, borderWidth: 1.5,
+      fill: true,
+      backgroundColor: `${color}18`,
+      tension: 0.4, pointRadius: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: false,
+      scales: { x: { display: false }, y: { display: false } },
+      plugins: { legend: { display: false }, tooltip: { enabled: false } }
+    }
+  });
+
+  function fmt(n) {
+    return n >= 1000
+      ? '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 })
+      : '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+  }
+
+  function setChange(el, pct) {
+    const up = pct >= 0;
+    el.textContent = (up ? '+' : '') + pct.toFixed(2) + '%';
+    el.className = `text-xs font-bold ${up ? 'text-secondary' : 'text-error'}`;
+  }
+
+  async function loadPrices() {
+    const ids = COINS.map(c => c.cgId).join(',');
+    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('price fetch');
+    return await res.json();
+  }
+
+  async function loadChart(cgId, chartId, fallbackId, color) {
+    const url = `https://api.coingecko.com/api/v3/coins/${cgId}/market_chart?vs_currency=usd&days=1`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('chart fetch');
+    const data = await res.json();
+    const prices = data.prices.map(p => p[1]);
+    const labels = data.prices.map(p => new Date(p[0]).toISOString());
+
+    const fallback = document.getElementById(fallbackId);
+    if (fallback) fallback.style.display = 'none';
+
+    const canvas = document.getElementById(chartId);
+    if (!canvas) return;
+    const opts = CHART_OPTS(color);
+    opts.data.labels = labels;
+    opts.data.datasets[0].data = prices;
+    new Chart(canvas, opts);
+  }
+
+  async function init() {
+    try {
+      const prices = await loadPrices();
+      COINS.forEach(coin => {
+        const d = prices[coin.cgId];
+        if (!d) return;
+        const priceEl  = document.getElementById(coin.priceEl);
+        const changeEl = document.getElementById(coin.changeEl);
+        if (priceEl)  priceEl.textContent = fmt(d.usd);
+        if (changeEl) setChange(changeEl, d.usd_24h_change);
+      });
+    } catch (e) {
+      console.warn('CoinGecko price fetch failed — showing fallback labels.');
+      COINS.forEach(c => {
+        const el = document.getElementById(c.priceEl);
+        if (el) el.textContent = '—';
+      });
+    }
+
+    // Charts — staggered to respect free-tier rate limits
+    const colors = ['#59ffa3', '#59ffa3', '#ffb4ab', '#59ffa3'];
+    for (let i = 0; i < COINS.length; i++) {
+      const coin = COINS[i];
+      try {
+        await new Promise(r => setTimeout(r, i * 400)); // 400ms gap
+        await loadChart(coin.cgId, coin.chartId, coin.fallbackId, colors[i]);
+      } catch (e) {
+        console.warn(`Chart fetch failed for ${coin.cgId} — static fallback shown.`);
+      }
+    }
+  }
+
+  // Only run after DOM + Chart.js are ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+
+</body>
+</html>

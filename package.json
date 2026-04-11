@@ -1,0 +1,16 @@
+{
+  "name": "cryptomondays-wall-street",
+  "version": "1.0.0",
+  "description": "CryptoMondays Wall Street — static site with Luma event integration",
+  "private": true,
+  "scripts": {
+    "fetch-events": "node fetch-events.js",
+    "fetch-events:watch": "node -e \"const {execSync}=require('child_process');setInterval(()=>{try{execSync('node fetch-events.js',{stdio:'inherit'})}catch(e){}},3600000);execSync('node fetch-events.js',{stdio:'inherit'});\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
