@@ -59,6 +59,16 @@
   #globe-container:active{cursor:grabbing;}
   #globe-container canvas{display:block;width:100%!important;height:100%!important;}
   .chart-card canvas{display:block;}
+  @keyframes swivel {
+    0%   { transform: perspective(800px) rotateY(0deg);   }
+    25%  { transform: perspective(800px) rotateY(18deg);  }
+    75%  { transform: perspective(800px) rotateY(-18deg); }
+    100% { transform: perspective(800px) rotateY(0deg);   }
+  }
+  .logo-swivel {
+    animation: swivel 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
 </style>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
@@ -105,17 +115,11 @@
           <a href="events.html" class="border border-outline-variant/30 text-on-surface-variant px-10 py-4 rounded-lg font-bold uppercase tracking-tight hover:border-primary-container hover:text-primary-container transition-all">Apply to Attend</a>
         </div>
       </div>
-      <div class="relative flex justify-center items-center rounded-2xl overflow-hidden" style="min-height:420px;">
+      <div class="relative flex justify-center items-center" style="min-height:420px;">
         <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent blur-3xl rounded-full pointer-events-none"></div>
-        <img alt="Wall Street financial district"
-          class="w-full h-full object-cover rounded-2xl opacity-75 z-10"
-          style="min-height:380px;max-height:520px;"
-          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80&fit=crop"/>
-        <div class="absolute inset-0 z-20 rounded-2xl" style="background:linear-gradient(135deg,rgba(95,209,255,0.08) 0%,rgba(0,0,0,0.3) 100%);"></div>
-        <div class="absolute bottom-6 left-6 z-30">
-          <p class="text-[10px] font-mono text-primary-container uppercase tracking-widest">Wall Street</p>
-          <p class="text-xs font-bold text-white">New York, NY</p>
-        </div>
+        <img alt="CryptoMondays Wall Street Logo"
+          class="logo-swivel w-full max-w-sm h-auto object-contain z-10 drop-shadow-[0_0_60px_rgba(95,209,255,0.4)]"
+          src="images/cm-logo-3d.png"/>
       </div>
     </div>
   </section>
