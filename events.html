@@ -121,7 +121,6 @@
     <div class="bg-surface-container-low border border-outline-variant/10 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
         <p class="text-sm text-on-surface-variant">All upcoming events are listed on our Luma community page.</p>
-        <p class="text-white font-bold mt-1">View the full schedule at lu.ma/NFTVIP</p>
       </div>
       <a href="https://lu.ma/NFTVIP" target="_blank" rel="noopener"
         class="bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold uppercase tracking-tight text-sm hover:opacity-90 transition-opacity whitespace-nowrap flex items-center gap-2">
@@ -169,29 +168,30 @@
         </div>
 
         <!-- Right — Featured Speaker: Scott Shay -->
-        <div class="flex flex-col items-center gap-5">
+        <div class="flex flex-col items-center gap-4">
 
-          <!-- Wrapper: padding-top reserves space for the overflow above the frame -->
+          <!-- Wrapper: padding-top gives room for the figure to overflow above frame -->
           <div class="relative flex-shrink-0" style="width:300px; padding-top:90px;">
 
-            <!-- Frame: 320px tall, overflow:visible so image can break out the top -->
+            <!-- Frame: fixed height, overflow:visible so image breaks out the top -->
             <div class="relative rounded-2xl border-2 border-primary-container/40 bg-surface-container"
                  style="height:320px; overflow:visible;">
 
-              <!-- Subtle cyan glow inside frame -->
+              <!-- Subtle cyan glow -->
               <div class="absolute inset-0 rounded-2xl pointer-events-none"
                    style="background:radial-gradient(ellipse at 50% 10%, rgba(95,209,255,0.10) 0%, transparent 70%);"></div>
 
-              <!-- Scott Shay — top:-90px pushes 90px (≈28%) above the 320px frame -->
-              <!-- width:300px fills the frame; height:auto keeps natural ratio -->
+              <!-- Image scaled wide (500px) so Scott Shay's figure fills edge-to-edge.
+                   The transparent PNG sides blend into the dark background.
+                   top:-90px = ~28% above the 320px frame. -->
               <img src="images/scott-shay.png"
                    alt="Scott Shay"
                    class="absolute left-1/2 -translate-x-1/2 z-20 drop-shadow-[0_16px_40px_rgba(0,0,0,0.7)]"
-                   style="width:300px; top:-90px; height:auto;"/>
+                   style="width:500px; top:-90px; height:auto;"/>
 
-              <!-- Name plate gradient overlay at bottom of frame -->
+              <!-- Name plate at bottom -->
               <div class="absolute bottom-0 left-0 right-0 rounded-b-2xl px-4 pb-5 pt-16 text-center z-30"
-                   style="background:linear-gradient(to top, rgba(18,19,22,0.98) 60%, rgba(18,19,22,0.6) 80%, transparent);">
+                   style="background:linear-gradient(to top, rgba(18,19,22,0.98) 65%, rgba(18,19,22,0.5) 85%, transparent);">
                 <p class="text-white font-black uppercase tracking-tight text-lg leading-tight">Scott Shay</p>
                 <p class="text-primary-container text-[10px] font-bold uppercase tracking-widest mt-1">Founder, N3XT</p>
                 <p class="text-on-surface-variant text-[10px] mt-2 leading-snug">Repeat Entrepreneur · 30+ years<br/>in financial innovation</p>
@@ -199,10 +199,8 @@
             </div>
           </div>
 
-          <!-- Featured Speaker label below frame -->
-          <div class="text-center">
-            <span class="text-secondary font-mono text-[10px] tracking-widest uppercase">Featured Speaker</span>
-          </div>
+          <!-- Featured Speaker label below the frame -->
+          <p class="text-secondary font-mono text-xs tracking-widest uppercase text-center">Featured Speaker</p>
 
         </div>
 
