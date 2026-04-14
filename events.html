@@ -262,7 +262,7 @@
   'use strict';
 
   // ── State ─────────────────────────────────────────────────
-  const PAST_PREVIEW = 2;          // cards visible before "Show All" is clicked
+  const PAST_PREVIEW = 3;          // cards visible before "Show All" is clicked
   let location      = 'all';
   let pastExpanded  = false;
   let eventsData    = { upcoming: [], past: [] };
@@ -299,7 +299,7 @@
     const slug = locationSlug(ev.location);
     const img = ev.image ? `<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="${ev.image}" alt="${ev.title}"/>` : '';
     return `<div data-event-card data-location="${slug}"
-         class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low aspect-[16/9] md:aspect-auto md:h-[600px]">
+         class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low" style="aspect-ratio:1/1;max-height:680px;">
       ${img}
       <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
       <div class="absolute bottom-0 left-0 p-12 w-full">
@@ -341,7 +341,7 @@
       : `<div class="w-full h-full flex items-center justify-center"><span class="material-symbols-outlined text-4xl text-on-surface-variant/20">event</span></div>`;
     return `<div data-event-card data-location="${slug}" class="group cursor-pointer">
       <a href="${ev.url}" target="_blank" rel="noopener">
-        <div class="aspect-video mb-6 overflow-hidden rounded-lg bg-surface-container-high">${img}</div>
+        <div class="mb-6 overflow-hidden rounded-lg bg-surface-container-high" style="aspect-ratio:1/1;">${img}</div>
         <span class="text-[10px] text-on-surface-variant font-mono uppercase">${ev.date_label} · ${ev.location.toUpperCase()}</span>
         <h4 class="text-xl font-bold text-white uppercase tracking-tighter mt-2 group-hover:text-primary transition-colors">${ev.title}</h4>
       </a>

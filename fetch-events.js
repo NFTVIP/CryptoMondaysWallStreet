@@ -94,13 +94,30 @@ function normalizeEvent(entry) {
   const start = ev.start_at ? new Date(ev.start_at) : null;
   const tz    = ev.timezone || 'America/New_York';
 
-  // Best available location string
-  const geo = ev.geo_address_info || {};
+  // Best available location string — try all known Luma fields in priority order
+  const geo  = ev.geo_address_info || {};
+  const geoJ = (() => {
+    try { return typeof ev.geo_address_json === 'string' ? JSON.parse(ev.geo_address_json) : (ev.geo_address_json || {}); }
+    catch (_) { return {}; }
+  })();
+  const venue = ev.venue || {};
+
+  // Build a city/region fallback from structured geo sub-fields
+  const cityRegion = [geo.city || geoJ.city, geo.region || geo.state || geoJ.region, geo.country || geoJ.country]
+    .filter(Boolean).join(', ');
+
   const location =
-    geo.full_address ||
-    geo.address      ||
+    geo.full_address    ||
+    geoJ.full_address   ||
+    geo.address         ||
+    geoJ.address        ||
     ev.location_address ||
-    (ev.zoom_meeting_url ? 'Virtual (Zoom)' : 'Wall Street, New York, NY');
+    (venue.name && venue.address ? `${venue.name}, ${venue.address}` : null) ||
+    venue.name          ||
+    cityRegion          ||
+    (ev.zoom_meeting_url ? 'Virtual (Zoom)' : '') ||
+    (ev.meeting_url      ? 'Virtual'        : '') ||
+    'Wall Street, New York, NY';
 
   // Human-readable date/time in the event's own timezone
   const dateLabel = start
