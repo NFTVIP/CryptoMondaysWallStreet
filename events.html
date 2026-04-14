@@ -147,17 +147,17 @@
           <p class="text-on-surface-variant text-lg mb-10 leading-relaxed">
             We feature founders, investors, executives, and industry leaders with something real to say. If your insight fits the room, we want to hear from you.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col gap-4 w-full max-w-xs">
             <a href="mailto:speak@cryptomondaysws.com?subject=Speaker%20Application"
-              class="bg-primary-container text-on-primary-container px-10 py-4 rounded-lg font-bold uppercase tracking-tight hover:scale-105 transition-all text-center">
+              class="bg-primary-container text-on-primary-container w-full py-4 rounded-lg font-bold uppercase tracking-tight hover:scale-105 transition-all text-center">
               Apply to Speak
             </a>
             <a href="mailto:nominate@cryptomondaysws.com?subject=Speaker%20Nomination"
-              class="bg-surface-container-high text-white px-10 py-4 rounded-lg font-bold uppercase tracking-tight hover:bg-surface-container-highest transition-all text-center">
+              class="bg-surface-container-high text-white w-full py-4 rounded-lg font-bold uppercase tracking-tight hover:bg-surface-container-highest transition-all text-center">
               Nominate a Speaker
             </a>
             <a href="mailto:speak@cryptomondaysws.com?subject=Sponsored%20Speaking"
-              class="border border-outline-variant/30 text-white px-10 py-4 rounded-lg font-bold uppercase tracking-tight hover:border-primary-container hover:text-primary-container transition-all text-center">
+              class="border border-outline-variant/30 text-white w-full py-4 rounded-lg font-bold uppercase tracking-tight hover:border-primary-container hover:text-primary-container transition-all text-center">
               Ask About Sponsored Speaking
             </a>
           </div>
@@ -168,18 +168,29 @@
           </div>
         </div>
 
-        <!-- Right — speaker profile placeholder -->
-        <div class="flex flex-col items-center gap-6">
-          <!-- Replace the src below with a real headshot image path when available -->
-          <div class="w-48 h-48 rounded-full bg-surface-container border-2 border-primary-container/30 flex items-center justify-center overflow-hidden">
-            <span class="material-symbols-outlined text-6xl text-on-surface-variant">person</span>
-            <!-- Uncomment and replace when headshot is provided:
-            <img src="images/speaker-featured.jpg" alt="Featured Speaker" class="w-full h-full object-cover"/>
-            -->
-          </div>
-          <div class="text-center">
-            <p class="text-white font-bold">Featured voices</p>
-            <p class="text-on-surface-variant text-sm">From across digital assets, AI, finance, infrastructure, and market leadership.</p>
+        <!-- Right — Featured Speaker: Scott Shay -->
+        <div class="flex flex-col items-center">
+          <!-- Frame with 25% top overflow effect -->
+          <div class="relative flex-shrink-0" style="width:260px;">
+            <!-- Spacer so the overflowing image doesn't get clipped by the section -->
+            <div style="height:80px;"></div>
+            <!-- Frame card -->
+            <div class="relative rounded-2xl border-2 border-primary-container/40 bg-surface-container overflow-visible" style="height:300px;">
+              <!-- Cyan glow behind image -->
+              <div class="absolute inset-0 rounded-2xl" style="background:radial-gradient(ellipse at 50% 0%, rgba(95,209,255,0.08) 0%, transparent 70%);"></div>
+              <!-- Scott Shay image — sits above the frame, 25% overflows top -->
+              <img src="images/scott-shay.png"
+                   alt="Scott Shay"
+                   class="absolute left-1/2 -translate-x-1/2 z-20 drop-shadow-[0_12px_32px_rgba(0,0,0,0.6)]"
+                   style="width:240px; bottom:60px; top:-80px; height:calc(100% + 80px); object-fit:contain; object-position:bottom;"/>
+              <!-- Name plate at bottom of frame -->
+              <div class="absolute bottom-0 left-0 right-0 rounded-b-2xl p-4 text-center z-30"
+                   style="background:linear-gradient(to top, rgba(18,19,22,0.97) 55%, rgba(18,19,22,0.4) 85%, transparent);">
+                <p class="text-white font-black uppercase tracking-tight text-base">Scott Shay</p>
+                <p class="text-primary-container text-[10px] font-bold uppercase tracking-widest mt-1">Founder, N3XT</p>
+                <p class="text-on-surface-variant text-[10px] mt-1 leading-snug">Repeat Entrepreneur · 30+ years<br/>in financial innovation</p>
+              </div>
+            </div>
           </div>
         </div>
 
