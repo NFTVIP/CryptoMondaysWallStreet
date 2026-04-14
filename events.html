@@ -169,29 +169,41 @@
         </div>
 
         <!-- Right — Featured Speaker: Scott Shay -->
-        <div class="flex flex-col items-center">
-          <!-- Frame with 25% top overflow effect -->
-          <div class="relative flex-shrink-0" style="width:260px;">
-            <!-- Spacer so the overflowing image doesn't get clipped by the section -->
-            <div style="height:80px;"></div>
-            <!-- Frame card -->
-            <div class="relative rounded-2xl border-2 border-primary-container/40 bg-surface-container overflow-visible" style="height:300px;">
-              <!-- Cyan glow behind image -->
-              <div class="absolute inset-0 rounded-2xl" style="background:radial-gradient(ellipse at 50% 0%, rgba(95,209,255,0.08) 0%, transparent 70%);"></div>
-              <!-- Scott Shay image — sits above the frame, 25% overflows top -->
+        <div class="flex flex-col items-center gap-5">
+
+          <!-- Wrapper: padding-top reserves space for the overflow above the frame -->
+          <div class="relative flex-shrink-0" style="width:300px; padding-top:90px;">
+
+            <!-- Frame: 320px tall, overflow:visible so image can break out the top -->
+            <div class="relative rounded-2xl border-2 border-primary-container/40 bg-surface-container"
+                 style="height:320px; overflow:visible;">
+
+              <!-- Subtle cyan glow inside frame -->
+              <div class="absolute inset-0 rounded-2xl pointer-events-none"
+                   style="background:radial-gradient(ellipse at 50% 10%, rgba(95,209,255,0.10) 0%, transparent 70%);"></div>
+
+              <!-- Scott Shay — top:-90px pushes 90px (≈28%) above the 320px frame -->
+              <!-- width:300px fills the frame; height:auto keeps natural ratio -->
               <img src="images/scott-shay.png"
                    alt="Scott Shay"
-                   class="absolute left-1/2 -translate-x-1/2 z-20 drop-shadow-[0_12px_32px_rgba(0,0,0,0.6)]"
-                   style="width:240px; bottom:60px; top:-80px; height:calc(100% + 80px); object-fit:contain; object-position:bottom;"/>
-              <!-- Name plate at bottom of frame -->
-              <div class="absolute bottom-0 left-0 right-0 rounded-b-2xl p-4 text-center z-30"
-                   style="background:linear-gradient(to top, rgba(18,19,22,0.97) 55%, rgba(18,19,22,0.4) 85%, transparent);">
-                <p class="text-white font-black uppercase tracking-tight text-base">Scott Shay</p>
+                   class="absolute left-1/2 -translate-x-1/2 z-20 drop-shadow-[0_16px_40px_rgba(0,0,0,0.7)]"
+                   style="width:300px; top:-90px; height:auto;"/>
+
+              <!-- Name plate gradient overlay at bottom of frame -->
+              <div class="absolute bottom-0 left-0 right-0 rounded-b-2xl px-4 pb-5 pt-16 text-center z-30"
+                   style="background:linear-gradient(to top, rgba(18,19,22,0.98) 60%, rgba(18,19,22,0.6) 80%, transparent);">
+                <p class="text-white font-black uppercase tracking-tight text-lg leading-tight">Scott Shay</p>
                 <p class="text-primary-container text-[10px] font-bold uppercase tracking-widest mt-1">Founder, N3XT</p>
-                <p class="text-on-surface-variant text-[10px] mt-1 leading-snug">Repeat Entrepreneur · 30+ years<br/>in financial innovation</p>
+                <p class="text-on-surface-variant text-[10px] mt-2 leading-snug">Repeat Entrepreneur · 30+ years<br/>in financial innovation</p>
               </div>
             </div>
           </div>
+
+          <!-- Featured Speaker label below frame -->
+          <div class="text-center">
+            <span class="text-secondary font-mono text-[10px] tracking-widest uppercase">Featured Speaker</span>
+          </div>
+
         </div>
 
       </div>
