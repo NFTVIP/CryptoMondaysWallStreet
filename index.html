@@ -20,6 +20,8 @@
 <meta name="twitter:image" content="https://cryptomondayswallstreet.com/images/WallStreet-Sign.png"/>
 <!-- Globe.gl — open-source 3D globe (MIT) -->
 <script src="https://cdn.jsdelivr.net/npm/globe.gl/dist/globe.gl.min.js"></script>
+<!-- Chart.js — MIT license -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script id="tailwind-config">
   tailwind.config = {
     darkMode:"class",
@@ -56,6 +58,7 @@
   #globe-container{width:100%;height:100%;cursor:grab;}
   #globe-container:active{cursor:grabbing;}
   #globe-container canvas{display:block;width:100%!important;height:100%!important;}
+  .chart-card canvas{display:block;}
 </style>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
@@ -102,10 +105,17 @@
           <a href="events.html" class="border border-outline-variant/30 text-on-surface-variant px-10 py-4 rounded-lg font-bold uppercase tracking-tight hover:border-primary-container hover:text-primary-container transition-all">Apply to Attend</a>
         </div>
       </div>
-      <div class="relative flex justify-center items-center">
-        <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent blur-3xl rounded-full"></div>
-        <img alt="CryptoMondays 3D Logo" class="w-full max-w-lg h-auto object-contain z-10 drop-shadow-[0_0_50px_rgba(95,209,255,0.3)]"
-          src="https://lh3.googleusercontent.com/aida/ADBb0ui1DiECciR-zC0geXVDA4QIx-504Qa9HZ1iP4YVmXNxGKq2GZAseGU5CwWhXhvzIN7fcSpgMpahLHL2e4ZL7_NSYm6MSP1iiPp649Yydd1d_RmuJb4jo6ojS8iFQmVIBhiQ8l3AH2TjlTwgpo56o_PVF_u__ZM34Zrc1MDdVkNFtVBaYFNUFx9Q2Lcn1FrPcm4gm8Kv8lXgTrR1S699gTuHwwo7WBpfeu6CudDi_Gk2jp-qjRpQgj9uosLAw8ncqsc8ofGE_zjmdA"/>
+      <div class="relative flex justify-center items-center rounded-2xl overflow-hidden" style="min-height:420px;">
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent blur-3xl rounded-full pointer-events-none"></div>
+        <img alt="Wall Street financial district"
+          class="w-full h-full object-cover rounded-2xl opacity-75 z-10"
+          style="min-height:380px;max-height:520px;"
+          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80&fit=crop"/>
+        <div class="absolute inset-0 z-20 rounded-2xl" style="background:linear-gradient(135deg,rgba(95,209,255,0.08) 0%,rgba(0,0,0,0.3) 100%);"></div>
+        <div class="absolute bottom-6 left-6 z-30">
+          <p class="text-[10px] font-mono text-primary-container uppercase tracking-widest">Wall Street</p>
+          <p class="text-xs font-bold text-white">New York, NY</p>
+        </div>
       </div>
     </div>
   </section>
@@ -224,6 +234,86 @@
     </div>
   </section>
 
+  <!-- ─── Live Market Context (CoinGecko free API + Chart.js) ─── -->
+  <section class="py-16 px-8 md:px-24 bg-surface border-t border-outline-variant/10">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="flex items-baseline justify-between mb-8">
+        <h2 class="text-xl font-bold text-white tracking-tight uppercase">Live Market Context</h2>
+        <span class="text-[10px] text-on-surface-variant/50 font-mono uppercase tracking-widest">Source: CoinGecko · No key required · Updated on load</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- BTC -->
+        <div class="chart-card bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">BTC / USD</span>
+            <span id="btc-change" class="text-secondary text-xs font-bold">—</span>
+          </div>
+          <div class="h-12 w-full relative mb-3">
+            <canvas id="chart-btc"></canvas>
+            <div id="fallback-btc" class="absolute inset-0 flex items-end gap-[2px] px-1">
+              <div class="flex-1 bg-secondary/20 h-[40%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[60%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/40 h-[50%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[75%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/60 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[80%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/80 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary h-[90%] rounded-sm"></div>
+            </div>
+          </div>
+          <p class="text-lg font-bold text-white" id="btc-price">Loading…</p>
+        </div>
+        <!-- ETH -->
+        <div class="chart-card bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">ETH / USD</span>
+            <span id="eth-change" class="text-secondary text-xs font-bold">—</span>
+          </div>
+          <div class="h-12 w-full relative mb-3">
+            <canvas id="chart-eth"></canvas>
+            <div id="fallback-eth" class="absolute inset-0 flex items-end gap-[2px] px-1">
+              <div class="flex-1 bg-secondary/20 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[45%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/40 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[50%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/60 h-[70%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[60%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/80 h-[80%] rounded-sm"></div><div class="flex-1 bg-secondary h-[75%] rounded-sm"></div>
+            </div>
+          </div>
+          <p class="text-lg font-bold text-white" id="eth-price">Loading…</p>
+        </div>
+        <!-- SOL -->
+        <div class="chart-card bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">SOL / USD</span>
+            <span id="sol-change" class="text-xs font-bold">—</span>
+          </div>
+          <div class="h-12 w-full relative mb-3">
+            <canvas id="chart-sol"></canvas>
+            <div id="fallback-sol" class="absolute inset-0 flex items-end gap-[2px] px-1">
+              <div class="flex-1 bg-error/30 h-[70%] rounded-sm"></div><div class="flex-1 bg-error/40 h-[60%] rounded-sm"></div>
+              <div class="flex-1 bg-error/50 h-[75%] rounded-sm"></div><div class="flex-1 bg-error/60 h-[80%] rounded-sm"></div>
+              <div class="flex-1 bg-error/70 h-[65%] rounded-sm"></div><div class="flex-1 bg-error/80 h-[85%] rounded-sm"></div>
+              <div class="flex-1 bg-error/90 h-[70%] rounded-sm"></div><div class="flex-1 bg-error h-[90%] rounded-sm"></div>
+            </div>
+          </div>
+          <p class="text-lg font-bold text-white" id="sol-price">Loading…</p>
+        </div>
+        <!-- LINK -->
+        <div class="chart-card bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">LINK / USD</span>
+            <span id="link-change" class="text-secondary text-xs font-bold">—</span>
+          </div>
+          <div class="h-12 w-full relative mb-3">
+            <canvas id="chart-link"></canvas>
+            <div id="fallback-link" class="absolute inset-0 flex items-end gap-[2px] px-1">
+              <div class="flex-1 bg-secondary/20 h-[30%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[50%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/40 h-[40%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[60%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/60 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[75%] rounded-sm"></div>
+              <div class="flex-1 bg-secondary/80 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary h-[85%] rounded-sm"></div>
+            </div>
+          </div>
+          <p class="text-lg font-bold text-white" id="link-price">Loading…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── Foundational Mission ─── -->
   <section class="py-24 bg-surface-container-low border-y border-outline-variant/5">
     <div class="max-w-screen-2xl mx-auto px-8 md:px-24">
@@ -242,7 +332,7 @@
           </div>
           <div>
             <h4 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <span class="material-symbols-outlined text-secondary">hub</span>Strategic Partnerships
+              <span class="material-symbols-outlined text-primary-container">hub</span>Strategic Partnerships
             </h4>
             <p class="text-on-surface-variant text-lg leading-relaxed pl-9">We create opportunities for aligned brands to show up through visibility, programming, introductions, and custom activation.</p>
           </div>
@@ -331,13 +421,13 @@
     <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
       <div class="order-2 lg:order-1">
         <div class="grid grid-cols-2 gap-4">
-          <div class="aspect-square bg-surface-container-low rounded-xl flex items-center justify-center p-8">
-            <img alt="Institutional handshake" class="w-full h-full object-cover rounded-lg opacity-80"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2-TYs-E3coTwxGOkBAxeAKN9EzEi4Q0ofcE7sxmus0fK3hmgF65-zuGmkOawZVXucKfGGhcqi1V_KdHOmKc-GF2iKn-gt2X2UAoaLHZWhG_wWdY6mZHPIWH_xvq9owNq06ERLIDZlasIYaf5KzNj16SWDgkCOeNTFjcwqTA56iSiLir6kOXDdaRQpAFXL2hF25gB683anTh4J7m6migvmj_6Fhx40d1sAWHKPHttE7aLpLkoNLiHTut859DnkQ4-vkZW9OjsFT_Q"/>
+          <div class="aspect-square bg-surface-container-low rounded-xl overflow-hidden">
+            <img alt="Business networking event" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
+              src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=600&q=80&fit=crop"/>
           </div>
-          <div class="aspect-square bg-surface-container-low rounded-xl flex items-center justify-center p-8 mt-12">
-            <img alt="Digital data visualization" class="w-full h-full object-cover rounded-lg opacity-80"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_cYsDEs9IY8uwJX_u6Ie9dbLxtGFCNuN2FOZa7AFhI6sQN3v5Z0Ff-nJprvTkGU7J3qLAqOT23nhOB3e5l_HNqa8vr9KJkhtlKA5YkLvdqxw_Xc6jXo5TVqY-kCOIVngPZTRqCgbjmNcsu5ukYxCbjaUORyZ681t30qmfoeDuYRcumqP9zbJ_JLIH9TdUFS0O69fx-wVsx0Z2qwGXBTWBVtR9ZsFQymWJII0oFGFXPsF1FNRmABtHpGXp72Xxu3Xdm2yBwDH4ZE"/>
+          <div class="aspect-square bg-surface-container-low rounded-xl overflow-hidden mt-12">
+            <img alt="Financial market screens" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity duration-500"
+              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&fit=crop"/>
           </div>
         </div>
       </div>
@@ -584,26 +674,59 @@
       return;
     }
 
+    // 6 featured hub cities — persistent visible labels on the globe
+    const HUB_CITIES = [
+      { name: 'NYC / Wall St', lat: 40.7128, lng: -74.0060 },
+      { name: 'Miami, FL',     lat: 25.7617, lng: -80.1918 },
+      { name: 'Austin, TX',    lat: 30.2672, lng: -97.7431 },
+      { name: 'London',        lat: 51.5074, lng:  -0.1278 },
+      { name: 'Paris',         lat: 48.8566, lng:   2.3522 },
+      { name: 'Singapore',     lat:  1.3521, lng: 103.8198 },
+    ];
+
     const myGlobe = Globe()(container);
     myGlobe
-      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-day.jpg')
       .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
       .backgroundColor('rgba(0,0,0,0)')
       .showAtmosphere(true)
       .atmosphereColor('#5fd1ff')
-      .atmosphereAltitude(0.16)
-      // Regular city dots
+      .atmosphereAltitude(0.20)
+      // All chapter city dots
       .pointsData(CM_CITIES)
       .pointLat('lat')
       .pointLng('lng')
       .pointColor(d => d.spotlight ? '#5fd1ff' : '#59ffa3')
       .pointAltitude(0.015)
-      .pointRadius(d => d.spotlight ? 0.6 : 0.25)
+      .pointRadius(d => d.spotlight ? 0.7 : 0.28)
       .pointLabel(d =>
         `<div style="background:rgba(0,0,0,0.85);color:#fff;padding:4px 10px;
          border-radius:4px;font-size:11px;font-family:Inter,sans-serif;
          border:1px solid rgba(255,255,255,0.15);white-space:nowrap">${d.name}</div>`
       )
+      // Persistent name labels for 6 featured hubs
+      .htmlElementsData(HUB_CITIES)
+      .htmlElement(d => {
+        const el = document.createElement('div');
+        el.style.cssText = [
+          'background:rgba(0,0,0,0.72)',
+          'color:#5fd1ff',
+          'padding:2px 7px',
+          'border-radius:3px',
+          'font-size:9px',
+          'font-family:Inter,sans-serif',
+          'font-weight:700',
+          'letter-spacing:0.07em',
+          'text-transform:uppercase',
+          'white-space:nowrap',
+          'border:1px solid rgba(95,209,255,0.35)',
+          'pointer-events:none',
+          'margin-top:-18px',
+        ].join(';');
+        el.textContent = d.name;
+        return el;
+      })
+      .htmlAltitude(0.03)
       // NYC blinking pulse rings
       .ringsData(NYC_RINGS)
       .ringLat('lat')
@@ -721,6 +844,78 @@
   updateCityTimes();
   setInterval(updateCityTimes, 30000); // refresh every 30 seconds
 
+})();
+</script>
+
+<!-- ── Crypto Chart Script (CoinGecko free API) ────────────── -->
+<script>
+(function () {
+  const COINS = [
+    { id: 'bitcoin',   cgId: 'bitcoin',   priceEl: 'btc-price',  changeEl: 'btc-change',  chartId: 'chart-btc',  fallbackId: 'fallback-btc' },
+    { id: 'ethereum',  cgId: 'ethereum',  priceEl: 'eth-price',  changeEl: 'eth-change',  chartId: 'chart-eth',  fallbackId: 'fallback-eth' },
+    { id: 'solana',    cgId: 'solana',    priceEl: 'sol-price',  changeEl: 'sol-change',  chartId: 'chart-sol',  fallbackId: 'fallback-sol' },
+    { id: 'chainlink', cgId: 'chainlink', priceEl: 'link-price', changeEl: 'link-change', chartId: 'chart-link', fallbackId: 'fallback-link' }
+  ];
+  const CHART_OPTS = (color) => ({
+    type: 'line',
+    data: { labels: [], datasets: [{ data: [], borderColor: color, borderWidth: 1.5,
+      fill: true, backgroundColor: `${color}18`, tension: 0.4, pointRadius: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: false,
+      scales: { x: { display: false }, y: { display: false } },
+      plugins: { legend: { display: false }, tooltip: { enabled: false } }
+    }
+  });
+  function fmt(n) {
+    return n >= 1000
+      ? '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 })
+      : '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+  }
+  function setChange(el, pct) {
+    const up = pct >= 0;
+    el.textContent = (up ? '+' : '') + pct.toFixed(2) + '%';
+    el.className = `text-xs font-bold ${up ? 'text-secondary' : 'text-error'}`;
+  }
+  async function loadPrices() {
+    const ids = COINS.map(c => c.cgId).join(',');
+    const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`);
+    if (!res.ok) throw new Error('price fetch');
+    return res.json();
+  }
+  async function loadChart(cgId, chartId, fallbackId, color) {
+    const res = await fetch(`https://api.coingecko.com/api/v3/coins/${cgId}/market_chart?vs_currency=usd&days=1`);
+    if (!res.ok) throw new Error('chart fetch');
+    const data = await res.json();
+    const prices = data.prices.map(p => p[1]);
+    const labels = data.prices.map(p => new Date(p[0]).toISOString());
+    const fallback = document.getElementById(fallbackId);
+    if (fallback) fallback.style.display = 'none';
+    const canvas = document.getElementById(chartId);
+    if (!canvas) return;
+    const opts = CHART_OPTS(color);
+    opts.data.labels = labels;
+    opts.data.datasets[0].data = prices;
+    new Chart(canvas, opts);
+  }
+  async function init() {
+    try {
+      const prices = await loadPrices();
+      COINS.forEach(coin => {
+        const d = prices[coin.cgId];
+        if (!d) return;
+        const priceEl  = document.getElementById(coin.priceEl);
+        const changeEl = document.getElementById(coin.changeEl);
+        if (priceEl)  priceEl.textContent = fmt(d.usd);
+        if (changeEl) setChange(changeEl, d.usd_24h_change);
+      });
+    } catch (e) { /* prices remain at Loading… */ }
+    const COLORS = ['#5fd1ff','#59ffa3','#ffb4ab','#5fd1ff'];
+    COINS.forEach((coin, i) => {
+      loadChart(coin.cgId, coin.chartId, coin.fallbackId, COLORS[i]).catch(() => {});
+    });
+  }
+  if (typeof Chart !== 'undefined') { init(); }
+  else { document.currentScript.closest('script').addEventListener('load', init); }
 })();
 </script>
 

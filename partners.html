@@ -18,8 +18,6 @@
 <meta name="twitter:title" content="CryptoMondays Wall Street"/>
 <meta name="twitter:description" content="Curated events, strategic partnerships, and ecosystem visibility for founders, investors, executives, and operators."/>
 <meta name="twitter:image" content="https://cryptomondayswallstreet.com/images/WallStreet-Sign.png"/>
-<!-- Chart.js — open-source MIT, no API key required -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script id="tailwind-config">
   tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#92d0c1","surface-variant":"#343538","on-primary-fixed-variant":"#004d64","surface-container-lowest":"#0d0e11","tertiary":"#aeecdd","on-secondary-fixed":"#00210f","inverse-surface":"#e3e2e6","background":"#121316","on-surface":"#e3e2e6","error-container":"#93000a","primary-fixed":"#bee9ff","on-background":"#e3e2e6","on-tertiary-fixed-variant":"#095045","surface":"#121316","on-tertiary-fixed":"#00201b","surface-container-high":"#292a2d","on-secondary-container":"#005f35","on-surface-variant":"#bdc8cf","inverse-primary":"#006684","secondary":"#59ffa3","error":"#ffb4ab","primary-fixed-dim":"#68d3ff","outline-variant":"#3e484e","on-primary":"#003546","tertiary-fixed-dim":"#95d3c4","on-error":"#690005","on-error-container":"#ffdad6","primary-container":"#5fd1ff","surface-bright":"#38393c","surface-container-highest":"#343538","on-secondary":"#00391d","on-primary-fixed":"#001f2a","secondary-container":"#00e386","surface-tint":"#68d3ff","on-tertiary":"#00382f","on-tertiary-container":"#1a5a4f","surface-container":"#1f1f23","primary":"#b8e7ff","secondary-fixed":"#59ffa3","on-secondary-fixed-variant":"#00522d","inverse-on-surface":"#303034","on-primary-container":"#005872","surface-container-low":"#1b1b1f","secondary-fixed-dim":"#00e386","tertiary-fixed":"#b0efdf","surface-dim":"#121316","outline":"#879299"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},fontFamily:{"headline":["Inter"],"body":["Inter"],"label":["Inter"]}}}}
 </script>
@@ -48,8 +46,6 @@
     font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
     color:#879299;text-align:center;line-height:1.2;
   }
-  /* Crypto chart cards */
-  .chart-card canvas{display:block;}
 </style>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
@@ -338,96 +334,6 @@
     </div>
   </section>
 
-  <!-- ─── Live Crypto Charts (CoinGecko free API + Chart.js) ─── -->
-  <!--
-    DATA SOURCE: CoinGecko Public API — free, no API key required
-    https://www.coingecko.com/en/api — /simple/price + /coins/{id}/market_chart
-    Rate limit: ~30 req/min on free public endpoint.
-    FALLBACK: If fetch fails, static sparkline bars are shown.
-    Chart.js: MIT license (https://www.chartjs.org/)
-  -->
-  <section class="max-w-screen-xl mx-auto px-8 mb-32">
-    <div class="flex items-baseline justify-between mb-8">
-      <h2 class="text-2xl font-bold text-white tracking-tight">Live Market Context</h2>
-      <span class="text-[10px] text-on-surface-variant/50 font-mono uppercase tracking-widest">Source: CoinGecko · No key required · Updated on load</span>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-      <!-- BTC -->
-      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
-        <div class="flex justify-between items-start mb-3">
-          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">BTC / USD</span>
-          <span id="btc-change" class="text-secondary text-xs font-bold">—</span>
-        </div>
-        <div class="h-14 w-full relative mb-3">
-          <canvas id="chart-btc"></canvas>
-          <!-- static fallback shown until JS loads -->
-          <div id="fallback-btc" class="absolute inset-0 flex items-end gap-[2px] px-1">
-            <div class="flex-1 bg-secondary/20 h-[40%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[60%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/40 h-[50%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[75%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/60 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[80%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/80 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary h-[90%] rounded-sm"></div>
-          </div>
-        </div>
-        <p class="text-xl font-bold text-white" id="btc-price">Loading…</p>
-      </div>
-
-      <!-- ETH -->
-      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
-        <div class="flex justify-between items-start mb-3">
-          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">ETH / USD</span>
-          <span id="eth-change" class="text-secondary text-xs font-bold">—</span>
-        </div>
-        <div class="h-14 w-full relative mb-3">
-          <canvas id="chart-eth"></canvas>
-          <div id="fallback-eth" class="absolute inset-0 flex items-end gap-[2px] px-1">
-            <div class="flex-1 bg-secondary/20 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[45%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/40 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[50%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/60 h-[70%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[60%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/80 h-[80%] rounded-sm"></div><div class="flex-1 bg-secondary h-[75%] rounded-sm"></div>
-          </div>
-        </div>
-        <p class="text-xl font-bold text-white" id="eth-price">Loading…</p>
-      </div>
-
-      <!-- SOL -->
-      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
-        <div class="flex justify-between items-start mb-3">
-          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">SOL / USD</span>
-          <span id="sol-change" class="text-xs font-bold">—</span>
-        </div>
-        <div class="h-14 w-full relative mb-3">
-          <canvas id="chart-sol"></canvas>
-          <div id="fallback-sol" class="absolute inset-0 flex items-end gap-[2px] px-1">
-            <div class="flex-1 bg-error/30 h-[70%] rounded-sm"></div><div class="flex-1 bg-error/40 h-[60%] rounded-sm"></div>
-            <div class="flex-1 bg-error/50 h-[75%] rounded-sm"></div><div class="flex-1 bg-error/60 h-[80%] rounded-sm"></div>
-            <div class="flex-1 bg-error/70 h-[65%] rounded-sm"></div><div class="flex-1 bg-error/80 h-[85%] rounded-sm"></div>
-            <div class="flex-1 bg-error/90 h-[70%] rounded-sm"></div><div class="flex-1 bg-error h-[90%] rounded-sm"></div>
-          </div>
-        </div>
-        <p class="text-xl font-bold text-white" id="sol-price">Loading…</p>
-      </div>
-
-      <!-- LINK -->
-      <div class="chart-card bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
-        <div class="flex justify-between items-start mb-3">
-          <span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">LINK / USD</span>
-          <span id="link-change" class="text-secondary text-xs font-bold">—</span>
-        </div>
-        <div class="h-14 w-full relative mb-3">
-          <canvas id="chart-link"></canvas>
-          <div id="fallback-link" class="absolute inset-0 flex items-end gap-[2px] px-1">
-            <div class="flex-1 bg-secondary/20 h-[30%] rounded-sm"></div><div class="flex-1 bg-secondary/30 h-[50%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/40 h-[40%] rounded-sm"></div><div class="flex-1 bg-secondary/50 h-[60%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/60 h-[55%] rounded-sm"></div><div class="flex-1 bg-secondary/70 h-[75%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/80 h-[65%] rounded-sm"></div><div class="flex-1 bg-secondary h-[85%] rounded-sm"></div>
-          </div>
-        </div>
-        <p class="text-xl font-bold text-white" id="link-price">Loading…</p>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ─── Become a Featured Partner ─── -->
   <section class="max-w-screen-xl mx-auto px-8 mb-32">
@@ -502,115 +408,8 @@
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════════════════════
-     CRYPTO CHART SCRIPTS
-     Source: CoinGecko Public API — free tier, no API key
-     Library: Chart.js v4 — MIT license
-     Fallback: static bar sparklines shown if fetch fails
-     ══════════════════════════════════════════════════════════ -->
-<script>
-(function () {
 
-  const COINS = [
-    { id: 'bitcoin',   cgId: 'bitcoin',   priceEl: 'btc-price',  changeEl: 'btc-change',  chartId: 'chart-btc',  fallbackId: 'fallback-btc' },
-    { id: 'ethereum',  cgId: 'ethereum',  priceEl: 'eth-price',  changeEl: 'eth-change',  chartId: 'chart-eth',  fallbackId: 'fallback-eth' },
-    { id: 'solana',    cgId: 'solana',    priceEl: 'sol-price',  changeEl: 'sol-change',  chartId: 'chart-sol',  fallbackId: 'fallback-sol' },
-    { id: 'chainlink', cgId: 'chainlink', priceEl: 'link-price', changeEl: 'link-change', chartId: 'chart-link', fallbackId: 'fallback-link' }
-  ];
-
-  const CHART_OPTS = (color) => ({
-    type: 'line',
-    data: { labels: [], datasets: [{ data: [], borderColor: color, borderWidth: 1.5,
-      fill: true,
-      backgroundColor: `${color}18`,
-      tension: 0.4, pointRadius: 0 }] },
-    options: {
-      responsive: true, maintainAspectRatio: false, animation: false,
-      scales: { x: { display: false }, y: { display: false } },
-      plugins: { legend: { display: false }, tooltip: { enabled: false } }
-    }
-  });
-
-  function fmt(n) {
-    return n >= 1000
-      ? '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 })
-      : '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
-  }
-
-  function setChange(el, pct) {
-    const up = pct >= 0;
-    el.textContent = (up ? '+' : '') + pct.toFixed(2) + '%';
-    el.className = `text-xs font-bold ${up ? 'text-secondary' : 'text-error'}`;
-  }
-
-  async function loadPrices() {
-    const ids = COINS.map(c => c.cgId).join(',');
-    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('price fetch');
-    return await res.json();
-  }
-
-  async function loadChart(cgId, chartId, fallbackId, color) {
-    const url = `https://api.coingecko.com/api/v3/coins/${cgId}/market_chart?vs_currency=usd&days=1`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('chart fetch');
-    const data = await res.json();
-    const prices = data.prices.map(p => p[1]);
-    const labels = data.prices.map(p => new Date(p[0]).toISOString());
-
-    const fallback = document.getElementById(fallbackId);
-    if (fallback) fallback.style.display = 'none';
-
-    const canvas = document.getElementById(chartId);
-    if (!canvas) return;
-    const opts = CHART_OPTS(color);
-    opts.data.labels = labels;
-    opts.data.datasets[0].data = prices;
-    new Chart(canvas, opts);
-  }
-
-  async function init() {
-    try {
-      const prices = await loadPrices();
-      COINS.forEach(coin => {
-        const d = prices[coin.cgId];
-        if (!d) return;
-        const priceEl  = document.getElementById(coin.priceEl);
-        const changeEl = document.getElementById(coin.changeEl);
-        if (priceEl)  priceEl.textContent = fmt(d.usd);
-        if (changeEl) setChange(changeEl, d.usd_24h_change);
-      });
-    } catch (e) {
-      console.warn('CoinGecko price fetch failed — showing fallback labels.');
-      COINS.forEach(c => {
-        const el = document.getElementById(c.priceEl);
-        if (el) el.textContent = '—';
-      });
-    }
-
-    // Charts — staggered to respect free-tier rate limits
-    const colors = ['#59ffa3', '#59ffa3', '#ffb4ab', '#59ffa3'];
-    for (let i = 0; i < COINS.length; i++) {
-      const coin = COINS[i];
-      try {
-        await new Promise(r => setTimeout(r, i * 400)); // 400ms gap
-        await loadChart(coin.cgId, coin.chartId, coin.fallbackId, colors[i]);
-      } catch (e) {
-        console.warn(`Chart fetch failed for ${coin.cgId} — static fallback shown.`);
-      }
-    }
-  }
-
-  // Only run after DOM + Chart.js are ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-})();
-</script>
+</body>
 
 </body>
 </html>
