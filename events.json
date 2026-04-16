@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-04-15T19:40:43.057Z",
+  "fetched_at": "2026-04-16T03:41:01.831Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
@@ -15,6 +15,21 @@
       "url": "https://luma.com/CryptoMondaysConsensus2026",
       "period": "upcoming",
       "featured": true,
+      "guest_count": 0,
+      "tags": []
+    },
+    {
+      "id": "evt-OGyZnzF5I8PKjnV",
+      "title": "Bitcoin Meets the Original HODL - Private Consensus Dinner",
+      "description": "A small, private dinner on Miami Beach during Consensus 2026 for a curated group of individuals deeply engaged in Bitcoin.\nBitcoin Meets the Original HODL is an off-the-record conversation exploring long-term thinking in a world still domin",
+      "image": "https://images.lumacdn.com/event-covers/8j/ef6e9469-4338-410c-b923-6b8c045954ba.png",
+      "date_iso": "2026-05-04T23:00:00.000Z",
+      "date_label": "May 4, 2026",
+      "time_label": "7:00 PM EDT",
+      "location": "Wall Street, New York, NY",
+      "url": "https://luma.com/o8e3fb7l",
+      "period": "upcoming",
+      "featured": false,
       "guest_count": 0,
       "tags": []
     }
