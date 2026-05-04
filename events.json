@@ -1,23 +1,8 @@
 {
-  "fetched_at": "2026-05-04T14:25:10.515Z",
+  "fetched_at": "2026-05-04T19:52:37.792Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
-    {
-      "id": "evt-mdpFCE7RzLMerDD",
-      "title": "“May the 4th Be With You\" An Official Consensus Opening Event",
-      "description": "“May the 4th Be With You\" An Official opening event of Consensus 2026, hosted by American Crypto Academy and CryptoMondays Miami, Fort Lauderdale, and Wall Street.\nCryptoMondays community discounted Consensus registration link and 20% code:",
-      "image": "https://images.lumacdn.com/uploads/fp/8b161bfb-e01d-435c-bce3-3c6a46c8d61a.png",
-      "date_iso": "2026-05-04T18:00:00.000Z",
-      "date_label": "May 4, 2026",
-      "time_label": "2:00 PM EDT",
-      "location": "Angler's Hotel - Miami Beach, 660 Washington Ave, Miami Beach, FL 33139, USA",
-      "url": "https://luma.com/CryptoMondaysConsensus2026",
-      "period": "upcoming",
-      "featured": true,
-      "guest_count": 0,
-      "tags": []
-    },
     {
       "id": "evt-OGyZnzF5I8PKjnV",
       "title": "Bitcoin Meets the Original HODL - Private Consensus Dinner",
@@ -29,12 +14,27 @@
       "location": "Wall Street, New York, NY",
       "url": "https://luma.com/o8e3fb7l",
       "period": "upcoming",
-      "featured": false,
+      "featured": true,
       "guest_count": 0,
       "tags": []
     }
   ],
   "past": [
+    {
+      "id": "evt-mdpFCE7RzLMerDD",
+      "title": "“May the 4th Be With You\" An Official Consensus Opening Event",
+      "description": "“May the 4th Be With You\" An Official opening event of Consensus 2026, hosted by American Crypto Academy and CryptoMondays Miami, Fort Lauderdale, and Wall Street.\nCryptoMondays community discounted Consensus registration link and 20% code:",
+      "image": "https://images.lumacdn.com/uploads/fp/8b161bfb-e01d-435c-bce3-3c6a46c8d61a.png",
+      "date_iso": "2026-05-04T18:00:00.000Z",
+      "date_label": "May 4, 2026",
+      "time_label": "2:00 PM EDT",
+      "location": "Angler's Hotel - Miami Beach, 660 Washington Ave, Miami Beach, FL 33139, USA",
+      "url": "https://luma.com/CryptoMondaysConsensus2026",
+      "period": "past",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
     {
       "id": "evt-w9kIdEJucZswPHq",
       "title": "CryptoMondays Wall Street, April 6 presented by Valmar Capital w/ special guests George Chuang and Jim Hwang",
