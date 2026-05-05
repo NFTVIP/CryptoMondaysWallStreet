@@ -1,8 +1,9 @@
 {
-  "fetched_at": "2026-05-04T19:52:37.792Z",
+  "fetched_at": "2026-05-05T03:42:58.572Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
-  "upcoming": [
+  "upcoming": [],
+  "past": [
     {
       "id": "evt-OGyZnzF5I8PKjnV",
       "title": "Bitcoin Meets the Original HODL - Private Consensus Dinner",
@@ -11,15 +12,13 @@
       "date_iso": "2026-05-04T23:00:00.000Z",
       "date_label": "May 4, 2026",
       "time_label": "7:00 PM EDT",
-      "location": "Wall Street, New York, NY",
+      "location": "El Patio Restaurant – Bar Habana – La Terraza Rooftop, 660 Washington Ave, Miami Beach, FL 33139, USA",
       "url": "https://luma.com/o8e3fb7l",
-      "period": "upcoming",
-      "featured": true,
+      "period": "past",
+      "featured": false,
       "guest_count": 0,
       "tags": []
-    }
-  ],
-  "past": [
+    },
     {
       "id": "evt-mdpFCE7RzLMerDD",
       "title": "“May the 4th Be With You\" An Official Consensus Opening Event",
