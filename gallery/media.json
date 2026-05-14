@@ -1,0 +1,614 @@
+{
+  "events": [
+    {
+      "id": "consensus-opening-2026",
+      "title": "Consensus Opening Event 2026",
+      "date": "2026-05-11",
+      "featured": [
+        "item-026",
+        "item-029",
+        "item-031",
+        "item-049",
+        "item-057",
+        "item-064"
+      ],
+      "items": [
+        {
+          "id": "item-001",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000001.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000001.png",
+          "caption": ""
+        },
+        {
+          "id": "item-002",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000002.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000002.png",
+          "caption": ""
+        },
+        {
+          "id": "item-003",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000003.jpeg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000003.jpeg",
+          "caption": ""
+        },
+        {
+          "id": "item-004",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000004.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000004.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-005",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000005.jpeg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000005.jpeg",
+          "caption": ""
+        },
+        {
+          "id": "item-006",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000006.jpeg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000006.jpeg",
+          "caption": ""
+        },
+        {
+          "id": "item-007",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000007.jpeg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000007.jpeg",
+          "caption": ""
+        },
+        {
+          "id": "item-008",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000008.jpeg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000008.jpeg",
+          "caption": ""
+        },
+        {
+          "id": "item-009",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000008a.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000008a.png",
+          "caption": ""
+        },
+        {
+          "id": "item-010",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000008b.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000008b.png",
+          "caption": ""
+        },
+        {
+          "id": "item-011",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000008c.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000008c.png",
+          "caption": ""
+        },
+        {
+          "id": "item-012",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000008d.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000008d.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-013",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000008e.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000008e.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-014",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000009.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000009.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-015",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000013.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000013.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-016",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000016.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000016.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-017",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000018.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000018.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-018",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000020.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000020.png",
+          "caption": ""
+        },
+        {
+          "id": "item-019",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000030.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000030.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-020",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000033.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000033.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-021",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000035.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000035.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-022",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000039.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000039.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-023",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000042.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000042.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-024",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000047.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000047.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-025",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000053.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000053.png",
+          "caption": ""
+        },
+        {
+          "id": "item-026",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000061 a.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000061 a.png",
+          "caption": ""
+        },
+        {
+          "id": "item-027",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000061.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000061.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-028",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000062.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000062.png",
+          "caption": ""
+        },
+        {
+          "id": "item-029",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000063.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000063.png",
+          "caption": ""
+        },
+        {
+          "id": "item-030",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000069.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000069.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-031",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000073 a.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000073 a.png",
+          "caption": ""
+        },
+        {
+          "id": "item-032",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000073.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000073.png",
+          "caption": ""
+        },
+        {
+          "id": "item-033",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000081.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000081.png",
+          "caption": ""
+        },
+        {
+          "id": "item-034",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000093.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000093.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-035",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000094.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000094.png",
+          "caption": ""
+        },
+        {
+          "id": "item-036",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000097.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000097.png",
+          "caption": ""
+        },
+        {
+          "id": "item-037",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000105.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000105.png",
+          "caption": ""
+        },
+        {
+          "id": "item-038",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000114.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000114.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-039",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000119.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000119.png",
+          "caption": ""
+        },
+        {
+          "id": "item-040",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000127..png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000127..png",
+          "caption": ""
+        },
+        {
+          "id": "item-041",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000128.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000128.png",
+          "caption": ""
+        },
+        {
+          "id": "item-042",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000133.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000133.png",
+          "caption": ""
+        },
+        {
+          "id": "item-043",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000135.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000135.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-044",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000139.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000139.png",
+          "caption": ""
+        },
+        {
+          "id": "item-045",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000141.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000141.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-046",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000146.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000146.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-047",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000147.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000147.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-048",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000151.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000151.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-049",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000152.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000152.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-050",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000158.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000158.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-051",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000160.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000160.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-052",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000161.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000161.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-053",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000162.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000162.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-054",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000163.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000163.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-055",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000164.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000164.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-056",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000165.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000165.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-057",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000167.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000167.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-058",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000172.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000172.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-059",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000174.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000174.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-060",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000176.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000176.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-061",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000177.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000177.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-062",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000181.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000181.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-063",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000188.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000188.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-064",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000194.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000194.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-065",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000195.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000195.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-066",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000197.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000197.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-067",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000200.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000200.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-068",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000205.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000205.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-069",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000208.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000208.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-070",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000211.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000211.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-071",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000213.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000213.png",
+          "caption": ""
+        },
+        {
+          "id": "item-072",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000215.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000215.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-073",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000217.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000217.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-074",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000230.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000230.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-075",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000232.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000232.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-076",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000236.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000236.png",
+          "caption": ""
+        },
+        {
+          "id": "item-077",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000237 a.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000237 a.png",
+          "caption": ""
+        },
+        {
+          "id": "item-078",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000237.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000237.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-079",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000239.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000239.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-080",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000240 a.png",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000240 a.png",
+          "caption": ""
+        },
+        {
+          "id": "item-081",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000240.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000240.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-082",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000253.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000253.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-083",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000276.jpg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000276.jpg",
+          "caption": ""
+        },
+        {
+          "id": "item-084",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000277.jpeg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000277.jpeg",
+          "caption": ""
+        },
+        {
+          "id": "item-085",
+          "type": "image",
+          "src": "images/events/consensus-opening-2026/CryptoMonday - 00000278.jpeg",
+          "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000278.jpeg",
+          "caption": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+/* ── Featured bento grid ──────────────────────────────────────────────────── */
+#featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+  gap: 1rem;
+}
+
+/* First tile spans 2 columns + 2 rows for a hero feel */
+#featured-grid .gallery-tile:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  #featured-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 160px;
+  }
+  #featured-grid .gallery-tile:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  #featured-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+  #featured-grid .gallery-tile:first-child {
+    grid-column: span 1;
+  }
+}
+
+/* ── All-media grid ───────────────────────────────────────────────────────── */
+#media-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  #media-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  #media-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Gallery tile shared ──────────────────────────────────────────────────── */
+.gallery-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 200ms ease, filter 200ms ease;
+  background-color: #1f1f23; /* surface-container placeholder while lazy-loading */
+}
+
+.gallery-tile:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+/* Media grid tiles are square via aspect-ratio */
+#media-grid .gallery-tile {
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Video play badge ─────────────────────────────────────────────────────── */
+.play-badge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 14, 17, 0.30);
+}
+
+.play-badge .material-symbols-outlined {
+  font-size: 2.75rem;
+  color: #ffffff;
+  background: rgba(13, 14, 17, 0.65);
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+/* ── Caption overlay on featured tiles ───────────────────────────────────── */
+.tile-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(13, 14, 17, 0.85), transparent);
+  color: #e3e2e6;
+  font-size: 0.75rem;
+  padding: 1.25rem 0.875rem 0.875rem;
+}
+
+/* ── Tile fade-in on render ───────────────────────────────────────────────── */
+@keyframes tileIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-tile {
+  animation: tileIn 220ms ease both;
+}
+
+/* Stagger the first 12 tiles */
+.gallery-tile:nth-child(1)  { animation-delay:  0ms; }
+.gallery-tile:nth-child(2)  { animation-delay: 30ms; }
+.gallery-tile:nth-child(3)  { animation-delay: 60ms; }
+.gallery-tile:nth-child(4)  { animation-delay: 90ms; }
+.gallery-tile:nth-child(5)  { animation-delay:120ms; }
+.gallery-tile:nth-child(6)  { animation-delay:150ms; }
+.gallery-tile:nth-child(7)  { animation-delay:180ms; }
+.gallery-tile:nth-child(8)  { animation-delay:200ms; }
+.gallery-tile:nth-child(9)  { animation-delay:220ms; }
+.gallery-tile:nth-child(10) { animation-delay:240ms; }
+.gallery-tile:nth-child(11) { animation-delay:260ms; }
+.gallery-tile:nth-child(12) { animation-delay:280ms; }
+
+/* ── Lightbox overlay ─────────────────────────────────────────────────────── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(13, 14, 17, 0.93);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox.is-open {
+  display: flex;
+}
+
+#lightbox-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 95vw;
+}
+
+#lightbox-media img,
+#lightbox-media video {
+  max-height: 85vh;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+/* ── Lightbox nav buttons ─────────────────────────────────────────────────── */
+.lb-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #e3e2e6;
+  transition: background 150ms;
+  z-index: 10;
+}
+
+.lb-btn:hover { background: rgba(255, 255, 255, 0.18); }
+
+#lightbox-prev { left: -68px; }
+#lightbox-next { right: -68px; }
+
+#lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #e3e2e6;
+  transition: background 150ms;
+  z-index: 10;
+}
+
+#lightbox-close:hover { background: rgba(255, 255, 255, 0.18); }
+
+/* Mobile: move prev/next into view */
+@media (max-width: 640px) {
+  #lightbox-prev { left: 0.5rem; top: auto; bottom: 5rem; transform: none; }
+  #lightbox-next { right: 0.5rem; top: auto; bottom: 5rem; transform: none; }
+  #lightbox-inner { max-width: 100vw; padding: 0 0.5rem; }
+}
+
+/* ── Event selector ───────────────────────────────────────────────────────── */
+#event-selector {
+  background-color: #292a2d;
+  color: #e3e2e6;
+}
+
+#event-selector option {
+  background-color: #1f1f23;
+}
