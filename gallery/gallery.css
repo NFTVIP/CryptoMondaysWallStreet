@@ -157,6 +157,15 @@
   max-width: 95vw;
 }
 
+/* YouTube embed — 16:9, scaled to fit viewport */
+.yt-embed {
+  width: min(90vw, 960px);
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 0.5rem;
+  display: block;
+}
+
 #lightbox-media img,
 #lightbox-media video {
   max-height: 85vh;

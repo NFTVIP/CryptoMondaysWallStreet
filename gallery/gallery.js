@@ -274,8 +274,16 @@
     const item = lightboxItems[lightboxIndex];
     if (!item) return;
 
-    if (item.type === 'video') {
-      // src set only when lightbox opens — avoids preloading all videos
+    if (item.type === 'video' && isYouTube(item.src)) {
+      // YouTube — render iframe so the player loads properly
+      const videoId = extractYouTubeId(item.src);
+      lightboxMedia.innerHTML = `<iframe
+        class="yt-embed"
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+        allow="autoplay; fullscreen"
+        allowfullscreen></iframe>`;
+    } else if (item.type === 'video') {
+      // Self-hosted video — src set only when lightbox opens to avoid preload
       lightboxMedia.innerHTML = `<video controls autoplay src="${item.src}"></video>`;
     } else {
       lightboxMedia.innerHTML = `<img src="${item.src}" alt="${escHtml(item.caption || '')}">`;
@@ -294,11 +302,28 @@
   function pauseLightboxVideo() {
     const video = lightboxMedia ? lightboxMedia.querySelector('video') : null;
     if (video) video.pause();
+    // Stop YouTube iframe by blanking its src — no API needed
+    const iframe = lightboxMedia ? lightboxMedia.querySelector('iframe') : null;
+    if (iframe) iframe.src = '';
   }
 
   // ── Utility ───────────────────────────────────────────────────────────────
   function escHtml(str) {
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // Returns true if the src is a YouTube URL (watch or short link)
+  function isYouTube(src) {
+    return typeof src === 'string' && (src.includes('youtube.com') || src.includes('youtu.be'));
+  }
+
+  // Extracts the 11-char video ID from any YouTube URL format
+  function extractYouTubeId(src) {
+    const shortMatch = src.match(/youtu\.be\/([^?&]+)/);
+    if (shortMatch) return shortMatch[1];
+    const longMatch  = src.match(/[?&]v=([^?&]+)/);
+    if (longMatch)  return longMatch[1];
+    return src; // fallback: treat src itself as the ID
   }
 
   // ── Bootstrap ─────────────────────────────────────────────────────────────

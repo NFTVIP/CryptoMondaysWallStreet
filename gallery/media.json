@@ -607,6 +607,13 @@
           "src": "images/events/consensus-opening-2026/CryptoMonday - 00000278.jpeg",
           "thumb": "images/events/consensus-opening-2026/CryptoMonday - 00000278.jpeg",
           "caption": ""
+        },
+        {
+          "id": "item-086",
+          "type": "video",
+          "src": "https://youtu.be/DK7ssby6Y7Y",
+          "thumb": "https://img.youtube.com/vi/DK7ssby6Y7Y/maxresdefault.jpg",
+          "caption": ""
         }
       ]
     }
