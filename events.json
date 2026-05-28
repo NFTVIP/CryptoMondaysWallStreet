@@ -1,8 +1,24 @@
 {
-  "fetched_at": "2026-05-28T10:21:15.639Z",
+  "fetched_at": "2026-05-28T16:21:48.239Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
-  "upcoming": [],
+  "upcoming": [
+    {
+      "id": "evt-tr9lHLR1NfnfEHe",
+      "title": "June 8th Crypto Mondays Wall St x ETHConf NYC presented by 1Inch\" N3XT ACA TroutmanPepper Locke",
+      "description": "CryptoMondays Wall Street x ETHConf NYC\nReal World Solutions, RWAs, and the Next Institutional Chapter of Web3\nJoin CryptoMondays Wall Street an Opening Event for ETHConf NYC a curated evening focused on real-world solutions, real-world ass",
+      "image": "https://images.lumacdn.com/uploads/yn/87607031-2ec9-4882-a298-9b9fdc8fea8a.gif",
+      "date_iso": "2026-06-08T21:30:00.000Z",
+      "date_label": "Jun 8, 2026",
+      "time_label": "5:30 PM EDT",
+      "location": "Troutman Pepper Locke, 875 3rd Ave, New York, NY 10022, USA",
+      "url": "https://luma.com/CryptoMondaysWallStJune8EthConfNYC",
+      "period": "upcoming",
+      "featured": true,
+      "guest_count": 0,
+      "tags": []
+    }
+  ],
   "past": [
     {
       "id": "evt-OGyZnzF5I8PKjnV",
