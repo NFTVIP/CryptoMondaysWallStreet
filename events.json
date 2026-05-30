@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-05-30T08:38:44.054Z",
+  "fetched_at": "2026-05-30T14:00:15.104Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
     {
       "id": "evt-tr9lHLR1NfnfEHe",
-      "title": "June 8th CryptoMondays Wall St x ETHConf presented by 1Inch\" & Troutman Pepper Locke",
+      "title": "June 8th CryptoMondays Wall St x ETHConf presented by 1inch\" & Troutman Pepper Locke",
       "description": "CryptoMondays Wall Street x ETHConf NYC\nReal World Solutions, RWAs, and the Next Institutional Chapter of Web3\nJoin CryptoMondays Wall Street an Opening Event for ETHConf NYC a curated evening focused on real-world solutions, real-world ass",
       "image": "https://images.lumacdn.com/uploads/1z/25b94c39-9d71-47df-9407-042ae7f76c41.gif",
       "date_iso": "2026-06-08T21:30:00.000Z",
