@@ -167,8 +167,8 @@
           </div>
         </div>
 
-        <!-- Right — Featured Speaker: Scott Shay -->
-        <div class="flex flex-col items-center gap-4">
+        <!-- Right — Featured Speaker (rotates automatically) -->
+        <div id="speaker-rotator" class="flex flex-col items-center gap-4" style="transition:opacity 0.55s ease;">
 
           <!-- Wrapper: padding-top gives room for the figure to overflow above frame -->
           <div class="relative flex-shrink-0" style="width:300px; padding-top:90px;">
@@ -181,10 +181,9 @@
               <div class="absolute inset-0 rounded-2xl pointer-events-none"
                    style="background:radial-gradient(ellipse at 50% 10%, rgba(95,209,255,0.10) 0%, transparent 70%);"></div>
 
-              <!-- Image scaled wide (500px) so Scott Shay's figure fills edge-to-edge.
-                   The transparent PNG sides blend into the dark background.
-                   top:-90px = ~28% above the 320px frame. -->
-              <img src="images/scott-shay.png"
+              <!-- Speaker image — src/style updated by JS rotation -->
+              <img id="speaker-img"
+                   src="images/scott-shay.png"
                    alt="Scott Shay"
                    class="absolute left-1/2 -translate-x-1/2 z-20 drop-shadow-[0_16px_40px_rgba(0,0,0,0.7)]"
                    style="width:500px; top:-90px; height:auto;"/>
@@ -192,9 +191,9 @@
               <!-- Name plate at bottom -->
               <div class="absolute bottom-0 left-0 right-0 rounded-b-2xl px-4 pb-5 pt-16 text-center z-30"
                    style="background:linear-gradient(to top, rgba(18,19,22,0.98) 65%, rgba(18,19,22,0.5) 85%, transparent);">
-                <p class="text-white font-black uppercase tracking-tight text-lg leading-tight">Scott Shay</p>
-                <p class="text-primary-container text-[10px] font-bold uppercase tracking-widest mt-1">Founder, N3XT</p>
-                <p class="text-on-surface-variant text-[10px] mt-2 leading-snug">Repeat Entrepreneur · 30+ years<br/>in financial innovation</p>
+                <p id="speaker-name" class="text-white font-black uppercase tracking-tight text-lg leading-tight">Scott Shay</p>
+                <p id="speaker-role" class="text-primary-container text-[10px] font-bold uppercase tracking-widest mt-1">Founder, N3XT</p>
+                <p id="speaker-bio" class="text-on-surface-variant text-[10px] mt-2 leading-snug">Repeat Entrepreneur · 30+ years<br/>in financial innovation</p>
               </div>
             </div>
           </div>
@@ -511,6 +510,83 @@
   });
 
   loadEvents();
+})();
+</script>
+
+<!-- ─── Featured Speaker Rotator ─────────────────────────────────────────── -->
+<script>
+(function () {
+  'use strict';
+
+  // ── Speaker data ───────────────────────────────────────────────────────────
+  // To add / edit speakers: update this array.
+  // imgStyle controls how the photo sits in the frame — match the values used
+  // for Scott Shay (transparent PNG, bleeds 90px above the 320px frame) or
+  // adjust per-speaker if the photo has a solid background.
+  var SPEAKERS = [
+    {
+      image:    'images/scott-shay.png',
+      imgStyle: 'width:500px; top:-90px; height:auto;',
+      alt:      'Scott Shay',
+      name:     'Scott Shay',
+      role:     'Founder, N3XT',
+      bio:      'Repeat Entrepreneur &middot; 30+ years<br/>in financial innovation',
+    },
+    {
+      image:    'images/irena-timofeeva.png',
+      imgStyle: 'width:500px; top:-90px; height:auto;',
+      alt:      'Irena Timofeeva, PhD',
+      name:     'Irena Timofeeva, PhD',
+      role:     'Head of Biz Dev, 1inch',
+      bio:      'Operations leader &amp; tech analyst',
+    },
+    {
+      image:    'images/kelly-ye.png',
+      imgStyle: 'width:500px; top:-90px; height:auto;',
+      alt:      'Kelly Ye',
+      name:     'Kelly Ye',
+      role:     'Co-Founder, CoinBridge',
+      bio:      'CFA democratizing alt investments,<br/>driving digital asset adoption',
+    },
+  ];
+
+  // ── Config ─────────────────────────────────────────────────────────────────
+  var ROTATION_MS = 5500;   // ms each speaker is shown before fading to next
+  var FADE_MS     = 550;    // must match the CSS transition on #speaker-rotator
+
+  // ── DOM refs ───────────────────────────────────────────────────────────────
+  var rotator = document.getElementById('speaker-rotator');
+  var imgEl   = document.getElementById('speaker-img');
+  var nameEl  = document.getElementById('speaker-name');
+  var roleEl  = document.getElementById('speaker-role');
+  var bioEl   = document.getElementById('speaker-bio');
+
+  if (!rotator || !imgEl || SPEAKERS.length < 2) return; // nothing to rotate
+
+  var current = 0;
+
+  function swap(idx) {
+    var s = SPEAKERS[idx];
+    // Fade out
+    rotator.style.opacity = '0';
+    setTimeout(function () {
+      // Swap content
+      imgEl.src = s.image;
+      imgEl.alt = s.alt;
+      imgEl.style.cssText = s.imgStyle;   // width / top / height only
+      nameEl.textContent  = s.name;
+      roleEl.textContent  = s.role;
+      bioEl.innerHTML     = s.bio;
+      // Fade in
+      rotator.style.opacity = '1';
+    }, FADE_MS);
+  }
+
+  setInterval(function () {
+    current = (current + 1) % SPEAKERS.length;
+    swap(current);
+  }, ROTATION_MS);
+
 })();
 </script>
 </body>
