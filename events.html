@@ -25,6 +25,34 @@
   body{background-color:#121316;font-family:'Inter',sans-serif;}
   .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
   .text-gradient{background:linear-gradient(to right,#b8e7ff,#5fd1ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+
+  /* ── Featured Speaker — mobile layout fix ───────────────────────────────── */
+  /* On small screens the parent section has overflow:hidden which clips the   */
+  /* 500px wide image. On mobile we contain it cleanly within the frame.       */
+  @media (max-width: 767px) {
+    #speaker-rotator {
+      width: 100%;
+      align-items: center;
+    }
+    #speaker-rotator > div:first-child {
+      width: 220px !important;
+      padding-top: 0 !important;
+    }
+    #speaker-rotator > div:first-child > div:first-child {
+      height: 260px !important;
+      overflow: hidden !important;
+    }
+    #speaker-img {
+      position: absolute !important;
+      width: 100% !important;
+      height: 100% !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+    }
+  }
 </style>
 </head>
 <body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
@@ -565,6 +593,8 @@
 
   var current = 0;
 
+  var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
   function swap(idx) {
     var s = SPEAKERS[idx];
     // Fade out
@@ -573,7 +603,10 @@
       // Swap content
       imgEl.src = s.image;
       imgEl.alt = s.alt;
-      imgEl.style.cssText = s.imgStyle;   // width / top / height only
+      // Only apply desktop imgStyle — on mobile the CSS media query handles layout
+      if (!isMobile) {
+        imgEl.style.cssText = s.imgStyle;
+      }
       nameEl.textContent  = s.name;
       roleEl.textContent  = s.role;
       bioEl.innerHTML     = s.bio;
