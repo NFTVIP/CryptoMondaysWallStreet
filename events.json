@@ -1,8 +1,9 @@
 {
-  "fetched_at": "2026-06-08T20:29:07.010Z",
+  "fetched_at": "2026-06-09T04:19:20.495Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
-  "upcoming": [
+  "upcoming": [],
+  "past": [
     {
       "id": "evt-tr9lHLR1NfnfEHe",
       "title": "June 8th CryptoMondays Wall St x ETHConf presented by 1inch & Troutman Pepper Locke",
@@ -13,13 +14,11 @@
       "time_label": "5:30 PM EDT",
       "location": "Troutman Pepper Locke, 875 3rd Ave, New York, NY 10022, USA",
       "url": "https://luma.com/CryptoMondaysWallStJune8EthConfNYC",
-      "period": "upcoming",
-      "featured": true,
+      "period": "past",
+      "featured": false,
       "guest_count": 0,
       "tags": []
-    }
-  ],
-  "past": [
+    },
     {
       "id": "evt-OGyZnzF5I8PKjnV",
       "title": "Bitcoin Meets the Original HODL - Private Consensus Dinner",
