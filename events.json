@@ -1,8 +1,24 @@
 {
-  "fetched_at": "2026-06-29T11:20:38.986Z",
+  "fetched_at": "2026-06-29T16:09:10.385Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
-  "upcoming": [],
+  "upcoming": [
+    {
+      "id": "evt-PGGa17bEdoXj00E",
+      "title": "CRYPTOMONDAYS Wall St BACK TO THE HUMANS",
+      "description": "CRYPTOMONDAYS Wall Street: BACK TO THE HUMANS\nAmerica turned 250. The fireworks ended. Your inbox survived.\nNow we’re calling everyone back to NYC for a CryptoMondays built around our favorite part of crypto: the people.\nNo panels. No pitch",
+      "image": "https://images.lumacdn.com/uploads/dn/311fb094-4f21-49fa-ad8e-769d31c95320.gif",
+      "date_iso": "2026-07-06T21:30:00.000Z",
+      "date_label": "Jul 6, 2026",
+      "time_label": "5:30 PM EDT",
+      "location": "Grand Street Social, 155 Grand St, New York, NY 10013, USA",
+      "url": "https://luma.com/nftvip-voma",
+      "period": "upcoming",
+      "featured": true,
+      "guest_count": 0,
+      "tags": []
+    }
+  ],
   "past": [
     {
       "id": "evt-tr9lHLR1NfnfEHe",
