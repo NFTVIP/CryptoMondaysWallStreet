@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-12T13:48:45.574Z",
+  "fetched_at": "2026-07-12T19:19:00.131Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [],
@@ -185,6 +185,21 @@
       "tags": []
     },
     {
+      "id": "evt-0DE0jtujvN1W7WC",
+      "title": "AWS Healthcare Investor and Innovator Forum",
+      "description": "",
+      "image": "https://images.lumacdn.com/event-covers/or/f42b96e8-74a2-402c-b0a1-6187ddd6994d.png",
+      "date_iso": "2025-09-17T12:00:00.000Z",
+      "date_label": "Sep 17, 2025",
+      "time_label": "8:00 AM EDT",
+      "location": "101 Park Ave, New York, NY 10017, USA",
+      "url": "https://luma.com/ts9mk9a8",
+      "period": "past",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
+    {
       "id": "evt-3XVDwTcKIFCMBoE",
       "title": "CryptoMonday NYC Women of Wall Street brought to you by Stellar Development Foundation, Vault12 & SoSo Value",
       "description": "",
@@ -290,6 +305,21 @@
       "tags": []
     },
     {
+      "id": "evt-22hsefD1lSA9Mf2",
+      "title": "CryptoMondays Wall Street Presented by Vault12 & CoinTracker Featuring John D'Agostino from Coinbase",
+      "description": "",
+      "image": "https://images.lumacdn.com/event-covers/2l/63c76482-4f73-42a6-ad7a-9866c5e646ee.png",
+      "date_iso": "2025-04-07T22:30:00.000Z",
+      "date_label": "Apr 7, 2025",
+      "time_label": "6:30 PM EDT",
+      "location": "Station 3, 26 Broadway 3rd floor, New York, NY 10004, USA",
+      "url": "https://luma.com/kb88tvsu",
+      "period": "past",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
+    {
       "id": "evt-1vA3T7PtjgoAy1T",
       "title": "8th Annual SXSW LATINAPALOOZA   featuring Patricia Vonne  No Badges Required          21+ FREE DAY SHOW!!!",
       "description": "",
@@ -314,6 +344,21 @@
       "time_label": "4:30 PM CDT",
       "location": "Four Seasons Hotel Austin, 98 San Jacinto Blvd, Austin, TX 78701, USA",
       "url": "https://luma.com/9lh15q7i",
+      "period": "past",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
+    {
+      "id": "evt-GhEf1yCzTcpNaYx",
+      "title": "CryptoMondays Wall Street Presented by VAULT12 tonight @Station3 NYC - Featuring Laura Vidiella Head of Investor Relations @VanEck",
+      "description": "",
+      "image": "https://images.lumacdn.com/event-covers/eg/5f69e7a7-aca2-40d0-9588-ce48744a60db.png",
+      "date_iso": "2025-03-03T23:00:00.000Z",
+      "date_label": "Mar 3, 2025",
+      "time_label": "6:00 PM EST",
+      "location": "Station 3, 26 Broadway 3rd floor, New York, NY 10004, USA",
+      "url": "https://luma.com/x8vtfsb0",
       "period": "past",
       "featured": false,
       "guest_count": 0,
