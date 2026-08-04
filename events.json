@@ -1,8 +1,9 @@
 {
-  "fetched_at": "2026-08-03T19:50:24.348Z",
+  "fetched_at": "2026-08-04T03:30:03.270Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
-  "upcoming": [
+  "upcoming": [],
+  "past": [
     {
       "id": "evt-H1GDlJcUqO6gQfb",
       "title": "CryptoMondays Wall St OFFICE HOURS @ Grand Street Social",
@@ -13,13 +14,11 @@
       "time_label": "5:30 PM EDT",
       "location": "Grand Street Social, 155 Grand St, New York, NY 10013, USA",
       "url": "https://luma.com/CryptoMondayWallStreetAug3",
-      "period": "upcoming",
-      "featured": true,
+      "period": "past",
+      "featured": false,
       "guest_count": 0,
       "tags": []
-    }
-  ],
-  "past": [
+    },
     {
       "id": "evt-PGGa17bEdoXj00E",
       "title": "CRYPTOMONDAYS Wall St BACK TO THE HUMANS",
