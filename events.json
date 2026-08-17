@@ -1,8 +1,24 @@
 {
-  "fetched_at": "2026-08-17T07:11:14.746Z",
+  "fetched_at": "2026-08-17T13:00:41.540Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
-  "upcoming": [],
+  "upcoming": [
+    {
+      "id": "evt-HHYKiS95DgqCcpJ",
+      "title": "CryptoMondays Wall Street + Luxembourg Consulate Presented by 1inch and World Markets | Private Event",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/bt/c40d944e-e3a6-4ae8-a3dc-78c0e6326e2a.gif",
+      "date_iso": "2026-09-14T21:30:00.000Z",
+      "date_label": "Sep 14, 2026",
+      "time_label": "5:30 PM EDT",
+      "location": "Luxembourg House, 17 Beekman Pl, New York, NY 10022, USA",
+      "url": "https://luma.com/CryptoMondaysWallStSept14LuxembourgConsulate",
+      "period": "upcoming",
+      "featured": true,
+      "guest_count": 0,
+      "tags": []
+    }
+  ],
   "past": [
     {
       "id": "evt-H1GDlJcUqO6gQfb",
