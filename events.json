@@ -1,8 +1,23 @@
 {
-  "fetched_at": "2026-08-21T18:50:08.470Z",
+  "fetched_at": "2026-08-22T01:44:47.334Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
+    {
+      "id": "evt-VtWPJS6i3fUHNS3",
+      "title": "CryptoMondays x Boston Blockchain Week: Official Opening Night",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/gn/2cc75fe3-d931-4ce2-9786-d2b821267058.png",
+      "date_iso": "2026-09-08T21:30:00.000Z",
+      "date_label": "Sep 8, 2026",
+      "time_label": "5:30 PM EDT",
+      "location": "1000 Marriott Dr Parking, Marriott Hotel, 1000 Marriott Dr, Quincy, MA 02169, USA",
+      "url": "https://luma.com/CryptoMondaysBostonBlockchain2026",
+      "period": "upcoming",
+      "featured": true,
+      "guest_count": 0,
+      "tags": []
+    },
     {
       "id": "evt-HHYKiS95DgqCcpJ",
       "title": "CryptoMondays Wall Street + Luxembourg Consulate Presented by 1inch and World Markets | Private Event",
@@ -14,7 +29,7 @@
       "location": "Luxembourg House, 17 Beekman Pl, New York, NY 10022, USA",
       "url": "https://luma.com/CryptoMondaysWallStSept14LuxembourgConsulate",
       "period": "upcoming",
-      "featured": true,
+      "featured": false,
       "guest_count": 0,
       "tags": []
     }
