@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T01:46:34.644Z",
+  "fetched_at": "2026-08-25T07:02:26.447Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
@@ -20,7 +20,7 @@
     },
     {
       "id": "evt-HHYKiS95DgqCcpJ",
-      "title": "CryptoMondays Wall Street + Luxembourg Consulate Presented by 1inch and World Markets | Private Event",
+      "title": "CryptoMondays Wall Street + Luxembourg Consulate NYC Presented by 1inch and World Markets | Private Event",
       "description": "",
       "image": "https://images.lumacdn.com/uploads/bt/c40d944e-e3a6-4ae8-a3dc-78c0e6326e2a.gif",
       "date_iso": "2026-09-14T21:30:00.000Z",
@@ -28,6 +28,36 @@
       "time_label": "5:30 PM EDT",
       "location": "Luxembourg House, 17 Beekman Pl, New York, NY 10022, USA",
       "url": "https://luma.com/CryptoMondaysWallStSept14LuxembourgConsulate",
+      "period": "upcoming",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
+    {
+      "id": "evt-NIniKneqlIuiW7M",
+      "title": "CryptoMondays Wall Street + RebelCon2026 by Market Rebellion & Circa Resort Las Vegas Community Partner",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/t9/b7f07eff-473e-47cd-a5d6-3ca7f826f8d2.png",
+      "date_iso": "2026-10-20T00:00:00.000Z",
+      "date_label": "Oct 19, 2026",
+      "time_label": "5:00 PM PDT",
+      "location": "Circa Resort & Casino, 8 Fremont St, Las Vegas, NV 89101, USA",
+      "url": "https://luma.com/CryptomondaysWallStreetRebelCon2026",
+      "period": "upcoming",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
+    {
+      "id": "evt-pJHThGT11BBYohC",
+      "title": "CryptoMondays Wall Street, Fort Lauderdale and Miami Chapters come together to bring you the Official Blockchain Futurist Conference Kickoff",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/kw/d56cdd72-7937-49be-b9e9-c63e8571757b.png",
+      "date_iso": "2026-11-16T23:00:00.000Z",
+      "date_label": "Nov 16, 2026",
+      "time_label": "6:00 PM EST",
+      "location": "Seminole Hard Rock Hotel & Casino, 1 Seminole Way, Davie, FL 33314, USA",
+      "url": "https://luma.com/btlvlxvx",
       "period": "upcoming",
       "featured": false,
       "guest_count": 0,
