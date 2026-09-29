@@ -1,8 +1,23 @@
 {
-  "fetched_at": "2026-09-29T12:40:59.773Z",
+  "fetched_at": "2026-09-29T22:10:14.750Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
+    {
+      "id": "evt-muCx5wo1X81ykMW",
+      "title": "Oct 5th CRYPTOMONDAYS Wall St Office Hours at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/yh/3bb2aee4-4291-4db6-9a96-0f9cb25f3646.gif",
+      "date_iso": "2026-10-05T21:30:00.000Z",
+      "date_label": "Oct 5, 2026",
+      "time_label": "5:30 PM EDT",
+      "location": "Clarke & Moore Bar and Kitchen, 201 8th Ave, New York, NY 10011, USA",
+      "url": "https://luma.com/CryptoMondaysWallStOctober5th",
+      "period": "upcoming",
+      "featured": true,
+      "guest_count": 0,
+      "tags": []
+    },
     {
       "id": "evt-NIniKneqlIuiW7M",
       "title": "CryptoMondays Wall Street + RebelCon2026 by Market Rebellion & Circa Resort Las Vegas Community Partner",
@@ -14,7 +29,7 @@
       "location": "Circa Resort & Casino, 8 Fremont St, Las Vegas, NV 89101, USA",
       "url": "https://luma.com/CryptomondaysWallStreetRebelCon2026",
       "period": "upcoming",
-      "featured": true,
+      "featured": false,
       "guest_count": 0,
       "tags": []
     },
