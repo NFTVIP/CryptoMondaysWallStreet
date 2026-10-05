@@ -1,23 +1,8 @@
 {
-  "fetched_at": "2026-10-05T14:25:16.054Z",
+  "fetched_at": "2026-10-05T23:59:20.824Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
-    {
-      "id": "evt-muCx5wo1X81ykMW",
-      "title": "Oct 5th CRYPTOMONDAYS Wall St Office Hours at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
-      "description": "",
-      "image": "https://images.lumacdn.com/uploads/ef/9ea34dda-d0fd-499c-a05e-001c7239b4f6.png",
-      "date_iso": "2026-10-05T21:30:00.000Z",
-      "date_label": "Oct 5, 2026",
-      "time_label": "5:30 PM EDT",
-      "location": "Clarke & Moore Bar and Kitchen, 201 8th Ave, New York, NY 10011, USA",
-      "url": "https://luma.com/CryptoMondaysWallStOctober5th",
-      "period": "upcoming",
-      "featured": true,
-      "guest_count": 0,
-      "tags": []
-    },
     {
       "id": "evt-NIniKneqlIuiW7M",
       "title": "CryptoMondays Wall Street + RebelCon2026 by Market Rebellion & Circa Resort Las Vegas Community Partner",
@@ -29,7 +14,7 @@
       "location": "Circa Resort & Casino, 8 Fremont St, Las Vegas, NV 89101, USA",
       "url": "https://luma.com/CryptomondaysWallStreetRebelCon2026",
       "period": "upcoming",
-      "featured": false,
+      "featured": true,
       "guest_count": 0,
       "tags": []
     },
@@ -50,6 +35,21 @@
     }
   ],
   "past": [
+    {
+      "id": "evt-muCx5wo1X81ykMW",
+      "title": "Oct 5th CRYPTOMONDAYS Wall St Office Hours at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/ef/9ea34dda-d0fd-499c-a05e-001c7239b4f6.png",
+      "date_iso": "2026-10-05T21:30:00.000Z",
+      "date_label": "Oct 5, 2026",
+      "time_label": "5:30 PM EDT",
+      "location": "Clarke & Moore Bar and Kitchen, 201 8th Ave, New York, NY 10011, USA",
+      "url": "https://luma.com/CryptoMondaysWallStOctober5th",
+      "period": "past",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
     {
       "id": "evt-HHYKiS95DgqCcpJ",
       "title": "CryptoMondays Wall Street + Luxembourg Trade and Investment | Private Event",
