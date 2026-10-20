@@ -1,23 +1,8 @@
 {
-  "fetched_at": "2026-10-19T18:26:47.863Z",
+  "fetched_at": "2026-10-20T00:51:24.730Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
-    {
-      "id": "evt-NIniKneqlIuiW7M",
-      "title": "CryptoMondays Wall Street + RebelCon2026 by Market Rebellion & Circa Resort Las Vegas Community Partner",
-      "description": "",
-      "image": "https://images.lumacdn.com/uploads/t9/b7f07eff-473e-47cd-a5d6-3ca7f826f8d2.png",
-      "date_iso": "2026-10-20T00:00:00.000Z",
-      "date_label": "Oct 19, 2026",
-      "time_label": "5:00 PM PDT",
-      "location": "Circa Resort & Casino, 8 Fremont St, Las Vegas, NV 89101, USA",
-      "url": "https://luma.com/CryptomondaysWallStreetRebelCon2026",
-      "period": "upcoming",
-      "featured": true,
-      "guest_count": 0,
-      "tags": []
-    },
     {
       "id": "evt-pJHThGT11BBYohC",
       "title": "CryptoMondays Wall Street, Fort Lauderdale and Miami Chapters come together to bring you the Official Blockchain Futurist Conference Kickoff",
@@ -29,12 +14,27 @@
       "location": "Seminole Hard Rock Hotel & Casino, 1 Seminole Way, Davie, FL 33314, USA",
       "url": "https://luma.com/btlvlxvx",
       "period": "upcoming",
-      "featured": false,
+      "featured": true,
       "guest_count": 0,
       "tags": []
     }
   ],
   "past": [
+    {
+      "id": "evt-NIniKneqlIuiW7M",
+      "title": "CryptoMondays Wall Street + RebelCon2026 by Market Rebellion & Circa Resort Las Vegas Community Partner",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/t9/b7f07eff-473e-47cd-a5d6-3ca7f826f8d2.png",
+      "date_iso": "2026-10-20T00:00:00.000Z",
+      "date_label": "Oct 19, 2026",
+      "time_label": "5:00 PM PDT",
+      "location": "Circa Resort & Casino, 8 Fremont St, Las Vegas, NV 89101, USA",
+      "url": "https://luma.com/CryptomondaysWallStreetRebelCon2026",
+      "period": "past",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
     {
       "id": "evt-muCx5wo1X81ykMW",
       "title": "Oct 5th CRYPTOMONDAYS Wall St Office Hours at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
