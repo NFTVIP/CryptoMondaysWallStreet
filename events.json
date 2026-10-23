@@ -1,8 +1,23 @@
 {
-  "fetched_at": "2026-10-22T18:24:43.656Z",
+  "fetched_at": "2026-10-23T00:52:56.051Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
+    {
+      "id": "evt-Tn2cySjdjlT1AhV",
+      "title": "Nov 2nd CRYPTOMONDAYS Wall St + Inception Capital at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/75/ede7662d-6416-496c-9aff-2e52f2ddc28a.gif",
+      "date_iso": "2026-11-02T22:30:00.000Z",
+      "date_label": "Nov 2, 2026",
+      "time_label": "5:30 PM EST",
+      "location": "Clarke & Moore Bar and Kitchen, 201 8th Ave, New York, NY 10011, USA",
+      "url": "https://luma.com/CryptoMondaysWallStreetNov2",
+      "period": "upcoming",
+      "featured": true,
+      "guest_count": 0,
+      "tags": []
+    },
     {
       "id": "evt-pJHThGT11BBYohC",
       "title": "CryptoMondays Wall Street, Fort Lauderdale and Miami Chapters come together to bring you the Official Blockchain Futurist Conference Kickoff",
@@ -14,7 +29,7 @@
       "location": "Seminole Hard Rock Hotel & Casino, 1 Seminole Way, Davie, FL 33314, USA",
       "url": "https://luma.com/btlvlxvx",
       "period": "upcoming",
-      "featured": true,
+      "featured": false,
       "guest_count": 0,
       "tags": []
     }
