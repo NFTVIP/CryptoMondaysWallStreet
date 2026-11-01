@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-01T00:40:29.217Z",
+  "fetched_at": "2026-11-01T06:20:44.216Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
@@ -20,13 +20,13 @@
     },
     {
       "id": "evt-pJHThGT11BBYohC",
-      "title": "CryptoMondays Wall Street, Fort Lauderdale and Miami Chapters come together to bring you the Official Blockchain Futurist Conference Kickoff",
+      "title": "CryptoMondays Wall Street, Fort Lauderdale and Miami Chapters come together and Take Aventura 🌴 Host partner Recombinant Diagnostics",
       "description": "",
-      "image": "https://images.lumacdn.com/uploads/kw/d56cdd72-7937-49be-b9e9-c63e8571757b.png",
-      "date_iso": "2026-11-16T23:00:00.000Z",
+      "image": "https://images.lumacdn.com/uploads/iu/72c5a301-8558-40de-879a-5663984ee676.png",
+      "date_iso": "2026-11-16T22:30:00.000Z",
       "date_label": "Nov 16, 2026",
-      "time_label": "6:00 PM EST",
-      "location": "Seminole Hard Rock Hotel & Casino, 1 Seminole Way, Davie, FL 33314, USA",
+      "time_label": "5:30 PM EST",
+      "location": "Industrious, 19505 Biscayne Blvd Ste. 2350, Aventura, FL 33180, USA",
       "url": "https://luma.com/btlvlxvx",
       "period": "upcoming",
       "featured": false,
