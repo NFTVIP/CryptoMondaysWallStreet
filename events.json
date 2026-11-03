@@ -1,26 +1,11 @@
 {
-  "fetched_at": "2026-11-02T18:16:17.504Z",
+  "fetched_at": "2026-11-03T00:33:44.969Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
   "upcoming": [
     {
-      "id": "evt-Tn2cySjdjlT1AhV",
-      "title": "Nov 2nd CRYPTOMONDAYS Wall St + World Markets at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
-      "description": "",
-      "image": "https://images.lumacdn.com/uploads/u0/56cdc5b5-cb53-4d1c-8431-1b352771e735.png",
-      "date_iso": "2026-11-02T22:30:00.000Z",
-      "date_label": "Nov 2, 2026",
-      "time_label": "5:30 PM EST",
-      "location": "Clarke & Moore Bar and Kitchen, 201 8th Ave, New York, NY 10011, USA",
-      "url": "https://luma.com/CryptoMondaysWallStreetNov2",
-      "period": "upcoming",
-      "featured": true,
-      "guest_count": 0,
-      "tags": []
-    },
-    {
       "id": "evt-pJHThGT11BBYohC",
-      "title": "CryptoMondays Wall Street Fort Lauderdale & Miami Chapters come together & Take Aventura 🌴 Host partner Recombinant Diagnostics & World.inc",
+      "title": "CryptoMondays Wall St, Fort Lauderdale & Miami Chapters take over Industrious in Aventura 🌴 Hosted by Recombinant Diagnostics & World.inc",
       "description": "",
       "image": "https://images.lumacdn.com/uploads/kf/c72be4f9-233d-45d5-89c9-d821ef390e1b.png",
       "date_iso": "2026-11-16T22:30:00.000Z",
@@ -29,12 +14,27 @@
       "location": "Industrious, 19505 Biscayne Blvd Ste. 2350, Aventura, FL 33180, USA",
       "url": "https://luma.com/Nov16CMFLLMIAWS",
       "period": "upcoming",
-      "featured": false,
+      "featured": true,
       "guest_count": 0,
       "tags": []
     }
   ],
   "past": [
+    {
+      "id": "evt-Tn2cySjdjlT1AhV",
+      "title": "Nov 2nd CRYPTOMONDAYS Wall St + World Markets at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
+      "description": "",
+      "image": "https://images.lumacdn.com/uploads/fx/9863b4b5-9d1a-4bc5-aaf6-83dc0feadd07.gif",
+      "date_iso": "2026-11-02T22:30:00.000Z",
+      "date_label": "Nov 2, 2026",
+      "time_label": "5:30 PM EST",
+      "location": "Clarke & Moore Bar and Kitchen, 201 8th Ave, New York, NY 10011, USA",
+      "url": "https://luma.com/CryptoMondaysWallStreetNov2",
+      "period": "past",
+      "featured": false,
+      "guest_count": 0,
+      "tags": []
+    },
     {
       "id": "evt-NIniKneqlIuiW7M",
       "title": "CryptoMondays Wall Street + RebelCon2026 by Market Rebellion & Circa Resort Las Vegas Community Partner",
