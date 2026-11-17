@@ -1,8 +1,9 @@
 {
-  "fetched_at": "2026-11-16T18:16:27.538Z",
+  "fetched_at": "2026-11-17T00:34:05.587Z",
   "calendar_id": "cal-bZcVhuPaNYGeSeA",
   "source": "Luma API",
-  "upcoming": [
+  "upcoming": [],
+  "past": [
     {
       "id": "evt-pJHThGT11BBYohC",
       "title": "CryptoMondays Wall St, Fort Lauderdale & Miami Chapters take over Industrious in Aventura 🌴 Hosted by Recombinant Diagnostics & World.inc",
@@ -13,13 +14,11 @@
       "time_label": "5:30 PM EST",
       "location": "Industrious, 19505 Biscayne Blvd Ste. 2350, Aventura, FL 33180, USA",
       "url": "https://luma.com/Nov16CMFLLMIAWS",
-      "period": "upcoming",
-      "featured": true,
+      "period": "past",
+      "featured": false,
       "guest_count": 0,
       "tags": []
-    }
-  ],
-  "past": [
+    },
     {
       "id": "evt-Tn2cySjdjlT1AhV",
       "title": "Nov 2nd CRYPTOMONDAYS Wall St + World Markets at Clarke & Moore in Chelsea 201 8th Ave (@ 20th St) 5:30 - 7:30",
